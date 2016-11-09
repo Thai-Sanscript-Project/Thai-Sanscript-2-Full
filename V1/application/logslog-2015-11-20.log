@@ -1,0 +1,42 @@
+INFO - 2015-11-20 11:13:59 --> Config Class Initialized
+INFO - 2015-11-20 11:13:59 --> Hooks Class Initialized
+DEBUG - 2015-11-20 11:13:59 --> UTF-8 Support Enabled
+INFO - 2015-11-20 11:13:59 --> Utf8 Class Initialized
+INFO - 2015-11-20 11:13:59 --> URI Class Initialized
+INFO - 2015-11-20 11:13:59 --> Router Class Initialized
+INFO - 2015-11-20 11:13:59 --> Output Class Initialized
+INFO - 2015-11-20 11:13:59 --> Security Class Initialized
+DEBUG - 2015-11-20 11:13:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-11-20 11:13:59 --> Input Class Initialized
+INFO - 2015-11-20 11:13:59 --> Language Class Initialized
+INFO - 2015-11-20 11:13:59 --> Loader Class Initialized
+INFO - 2015-11-20 11:13:59 --> Helper loaded: url_helper
+INFO - 2015-11-20 11:13:59 --> Session: Class initialized using 'files' driver.
+INFO - 2015-11-20 11:13:59 --> Parser Class Initialized
+INFO - 2015-11-20 11:13:59 --> Controller Class Initialized
+INFO - 2015-11-20 11:13:59 --> Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+INFO - 2015-11-20 11:13:59 --> File loaded: C:\wamp\www\sanskrit\application\views\api/textcompare.php
+INFO - 2015-11-20 11:13:59 --> File loaded: C:\wamp\www\sanskrit\application\views\api/textcompare.php
+INFO - 2015-11-20 11:13:59 --> Final output sent to browser
+DEBUG - 2015-11-20 11:13:59 --> Total execution time: 0.0430
+INFO - 2015-11-20 11:14:13 --> Config Class Initialized
+INFO - 2015-11-20 11:14:13 --> Hooks Class Initialized
+DEBUG - 2015-11-20 11:14:13 --> UTF-8 Support Enabled
+INFO - 2015-11-20 11:14:13 --> Utf8 Class Initialized
+INFO - 2015-11-20 11:14:13 --> URI Class Initialized
+INFO - 2015-11-20 11:14:13 --> Router Class Initialized
+INFO - 2015-11-20 11:14:13 --> Output Class Initialized
+INFO - 2015-11-20 11:14:13 --> Security Class Initialized
+DEBUG - 2015-11-20 11:14:13 --> Global POST, GET and COOKIE data sanitized
+INFO - 2015-11-20 11:14:13 --> Input Class Initialized
+INFO - 2015-11-20 11:14:13 --> Language Class Initialized
+INFO - 2015-11-20 11:14:13 --> Loader Class Initialized
+INFO - 2015-11-20 11:14:13 --> Helper loaded: url_helper
+INFO - 2015-11-20 11:14:13 --> Session: Class initialized using 'files' driver.
+INFO - 2015-11-20 11:14:13 --> Parser Class Initialized
+INFO - 2015-11-20 11:14:13 --> Controller Class Initialized
+INFO - 2015-11-20 11:14:13 --> Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36
+INFO - 2015-11-20 11:14:13 --> File loaded: C:\wamp\www\sanskrit\application\views\api/textcompare.php
+INFO - 2015-11-20 11:14:13 --> File loaded: C:\wamp\www\sanskrit\application\views\api/textcompare.php
+INFO - 2015-11-20 11:14:13 --> Final output sent to browser
+DEBUG - 2015-11-20 11:14:13 --> Total execution time: 0.0420

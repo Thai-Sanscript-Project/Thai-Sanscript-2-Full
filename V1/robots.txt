@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: http://thai-sanscript.com/sitemap.xml 

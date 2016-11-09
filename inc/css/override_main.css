@@ -1,0 +1,152 @@
+#main-slider .carousel .carousel-content {
+    margin-top: 0px; 
+}
+#main-slider .carousel h3 {
+    color: #fff;
+    font-style: oblique;
+}
+#main-slider .carousel .slide-margin {
+    margin-top: 70px;
+}
+#main-slider .carousel .item {
+    height: 660px;
+}
+.form-group .form-control {
+    border-color: #838383;
+}
+
+#Extend Table compare---------------------------------------------------------
+.bs-glyphicons {
+    margin: 0 -10px 20px;
+    overflow: hidden
+}
+.bs-glyphicons-list {
+    padding-left: 0;
+    list-style: none
+}
+.bs-glyphicons li {
+    float: left;
+    width: 25%;
+    /*height: 115px;*/
+    height: 90px;
+    padding: 10px;
+    font-size: 10px;
+    line-height: 1.4;
+    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #fff
+}
+.bs-glyphicons .glyphicon {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 19px;
+    font-weight: bold;
+}
+.bs-glyphicons .glyphicon-class {
+    display: block;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 19px;
+    font-weight: bold;
+
+    font-family: 'Glyphicons Halflings';
+    -webkit-font-smoothing: antialiased;
+    color: #003399
+}
+/*.bs-glyphicons li:hover {
+    color: #fff;
+    background-color: #563d7c
+}*/
+@media (min-width: 768px) {
+    .bs-glyphicons {
+        margin-right: 0;
+        margin-left: 0
+    }
+    .bs-glyphicons li {
+        /*width: 12.5%;*/
+        width: 6.2%;
+        font-size: 12px
+    }
+}
+
+#Extend #translite compare-------------------------------------------
+#translite{
+    height: auto;
+}
+.code {
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    width: 50%;
+    float:left;
+    overflow: auto;
+}
+
+.code-p{
+    font-family:'Open Sans','Helvetica Neue',Arial,sans-serif;
+    color: black; 
+    font-weight: bold;    
+    font-size: 18px;
+}
+
+.code-ol{  
+    font-family:'Open Sans','Helvetica Neue',Arial,sans-serif;
+    color:  #0000ff;
+    font-weight: normal; 
+    font-style: normal;
+    font-size: 16px;
+}
+
+.code-li{
+    padding: 5px 1px 5px 1px;
+}
+
+.hilight{
+    padding: 3px 3px 3px 3px;
+    background-color: yellow;
+    font-size: 17px;
+    font-weight: bold;
+    color:  #006600; 
+}
+.syllable{
+    color:  #006600;   
+}
+.s{
+    color:  #006600;   
+}
+.select-lang{
+    width: 98%;
+    height: 200px;
+    color: #000;
+}
+#Extend loading page-------------------------------------------
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+        url('../../inc/images/FhHRx.gif') 
+        50% 50% 
+        no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
+

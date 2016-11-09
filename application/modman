@@ -1,0 +1,14 @@
+/app/code/community/Stream/TOA /app/code/community/Stream/TOA
+/app/code/community/Varien /app/code/community/Varien
+/app/etc/modules/Stream_TOA.xml /app/etc/modules/Stream_TOA.xml
+/app/design/frontend/base/default/layout/toa/toa.xml /app/design/frontend/base/default/layout/toa/toa.xml
+/app/design/adminhtml/default/default/layout/toa/toa.xml /app/design/adminhtml/default/default/layout/toa/toa.xml
+/app/locale/th_TH/* /app/locale/th_TH/
+/media/import/* /media/import/
+/media/wysiwyg/banner/* /media/wysiwyg/banner/
+/media/wysiwyg/categories/large/* /media/wysiwyg/categories/large/
+/media/wysiwyg/categories/thumbnail/* /media/wysiwyg/categories/thumbnail/
+/skin/frontend/rwd/default/images/logo-toa.png /skin/frontend/rwd/default/images/logo-toa.png
+/skin/frontend/base/default/css/toa/toa.css /skin/frontend/base/default/css/toa/toa.css
+/skin/adminhtml/default/default/toa/css/admin-toa.css /skin/adminhtml/default/default/toa/css/admin-toa.css
+/var/import/* /var/import/
