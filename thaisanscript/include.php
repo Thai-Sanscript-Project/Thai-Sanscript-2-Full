@@ -1,4 +1,5 @@
 <?php
+require_once('thaisanscript/Sanscript.php');
 require_once('thaisanscript/ThaiSanscriptAPI.php');
 require_once('thaisanscript/ThaiSanscript.php');
 require_once('thaisanscript/ThaiSanscriptRule.php');

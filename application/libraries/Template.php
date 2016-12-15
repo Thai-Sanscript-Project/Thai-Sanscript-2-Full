@@ -28,6 +28,10 @@ class Template {
         $this->render_template($controller, "demo_template", $data);
     }
 
+    public function render_compare_template(CI_Controller $controller, $data = array()) {
+        $this->render_template($controller, "compare_template", $data);
+    }
+
     public function render_sample_template(CI_Controller $controller, $data = array()) {
         $this->set_template($controller, "design/templates/sample_template", $data);
     }

@@ -21,8 +21,9 @@ class Main extends CI_Controller {
         $this->template->append_js_embed("main/transliterate/table-compare-js");
         $this->template->render_main_template($this);
     }
+
     public function example() {
-       $this->template->set_page_title("ไทย-สันสคริปท์");
+        $this->template->set_page_title("ไทย-สันสคริปท์");
         $this->template->set_active_menu(30);
         $this->template->append_page_section("main/example/index");
         $this->template->render_main_template($this);
@@ -31,5 +32,7 @@ class Main extends CI_Controller {
     public function transliterate_compare() {
         $this->load->view('main/transliterate_compare/index');
     }
+
+
 
 }
