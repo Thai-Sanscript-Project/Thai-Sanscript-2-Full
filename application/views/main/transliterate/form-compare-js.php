@@ -37,7 +37,7 @@
                     showAndCheck = new Array(1, 1, 0, 0);
                 }
 
-
+                
                 var html = header() +
                         checkboxList(display, showAndCheck) +
                         langSection('1', getSrcTypeText(), source, display[0], showAndCheck[0]) +
