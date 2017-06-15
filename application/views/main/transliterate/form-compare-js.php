@@ -12,9 +12,22 @@
     $('#translite-button').click(function () {
         var sourceTxt = getSrcTxtval();
         var source = lineSplit(sourceTxt);
-        var destination = transliteration();
+
+        var srcType = getSrcTypeval();
+
+        var sendToBackend;
+        var destination;
+        
+        if (srcType === 'burmese') {
+            var out = transliteToBackend();
+            sendToBackend = out[0];
+            destination = out[1];
+        } else {
+            sendToBackend = transliteToBackend();
+            destination = transliteration();
+        }
         destination = lineSplit(destination);
-        var sendToBackend = transliteToBackend();
+
 
         var d = new Date();
         var timestamp = d.getTime();
@@ -26,7 +39,8 @@
             data: {
 //                    "sanskrit-romanize": roman.val(),
 //                    "sanskrit-devanagari": devanagari.val(),
-                "src-txt": sendToBackend
+                "src-txt": sendToBackend,
+                "lang": getLang()
             },
             success: function (data) {
                 var display = new Array(1, 1, 1, 1);
@@ -37,7 +51,7 @@
                     showAndCheck = new Array(1, 1, 0, 0);
                 }
 
-                
+
                 var html = header() +
                         checkboxList(display, showAndCheck) +
                         langSection('1', getSrcTypeText(), source, display[0], showAndCheck[0]) +

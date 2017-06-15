@@ -63,7 +63,7 @@ class ThaiSanscript {
         "ai" => "ไ",
         "au" => "เา",
         "r̥" => "ฤ",
-        "m̐"=> "ँ"
+        "m̐" => "ँ"
     );
     public $singleConsonant = array(
         "k" => "ก",
@@ -140,8 +140,10 @@ class ThaiSanscript {
     public $anusvaraLast;
     public $thaiVowelInFist1;
     public $thaiVowelInFist2;
+    private $lang;
 
     public function __construct($inform = FALSE) {
+        $this->lang = 'sans';
         if ($inform) {
             $this->singleConsonant["ḥ"] = "ะ";
             $this->singleVowel["a"] = "a";
@@ -175,7 +177,11 @@ class ThaiSanscript {
 
         $return = $this->separate($this->thaiVowelInFist);
         $this->thaiVowelInFist1 = $return['rm'];
-        $this->thaiVowelInFist2 =$return['th'];
+        $this->thaiVowelInFist2 = $return['th'];
+    }
+
+    function setLang($lang) {
+        $this->lang = $lang;
     }
 
     private function separate($array) {
@@ -211,7 +217,11 @@ class ThaiSanscript {
     }
 
     public function getAnusvara($nextConsonant = "") {
-        $return = "ม";
+        $return = "ง";
+        if ($this->lang == 'sans') {
+            $return = "ม";
+        }
+
         //(เศษวรรค): y = ย (ยะ) r = ร (ระ) l = ล (ละ) v = ว (วะ) ś = ศ (ศะ)
         //ṣ = ษ (ษะ) s = ส (สะ) h = ห (หะ)
         // return ม

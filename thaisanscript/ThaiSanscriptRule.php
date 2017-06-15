@@ -11,14 +11,17 @@ class ThaiSanscriptRule {
     public $thaimapper;
     public $visarga;
     private $util;
+    
 
     function __construct() {
+
         $this->thaimapper = new ThaiSanscript();
+        
         $this->visarga = new ThaiVisargaConvert();
         $this->util = new Util();
     }
 
-    public function convert($romanize) {
+    public function convert($romanize,$lang) {
         $txt = $romanize;
         $txt = $this->util->convertAvagarahaRemove($txt);
         $txt = $this->util->convertRomanChandrabinduToSingle($txt);
@@ -27,7 +30,7 @@ class ThaiSanscriptRule {
         $txt = $this->util->convertRomanizeMixVowel($txt);
         $txt = $this->util->convertRomanizeSingleConsonant($txt);
         $txt = $this->util->convertRomanizeSingleVowel($txt);
-        $txt = $this->convertAnusvaraAndChandrabindu($txt);
+        $txt = $this->convertAnusvaraAndChandrabindu($txt,$lang);
         $txt = $this->util->convertThaiVowelInFist($txt);
         $txt = $this->convertThaiVisarga($txt);
         $txt = $this->util->convertThaiVowelPrefix($txt);
@@ -74,9 +77,10 @@ class ThaiSanscriptRule {
         echo ("[" . $state . "] " . $romanize . " -> ");
     }
 
-    public function convertAnusvaraAndChandrabindu($thaiChar) {
+    public function convertAnusvaraAndChandrabindu($thaiChar,$lang) {
         $thaiChar = $thaiChar . " "; // after space 1  reserve  for condition
         $charList = $this->util->charList($thaiChar);
+        $this->thaimapper->setLang($lang);
 
         foreach ($charList as $i => $char) {
 //        for ($i = 0; $i < count($charList); $i++) {

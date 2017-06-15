@@ -15,7 +15,8 @@ class Transliteration extends CI_Controller {
     public function json() {
 
         $txt = $this->input->post('src-txt');
-        $json = $this->thaisans_adapter->jsonOutput($txt);
+        $lang = $this->input->post('lang');
+        $json = $this->thaisans_adapter->jsonOutput($txt,$lang);
         $this->output->set_content_type('application/json')->set_output($json);
     }
 

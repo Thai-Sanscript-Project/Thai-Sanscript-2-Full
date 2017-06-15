@@ -11,17 +11,18 @@
         <div class="row contact-wrap"> 
             <div class="status alert alert-success" style="display: none"></div>
             <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="">
-                <div class="col-sm-5 col-sm-offset-1">
+                <div class="col-sm-4 col-sm-offset-1">
                     <div class="form-group">
                         <label>ตัวอักษรต้นฉบับ</label>   
                         <a id="hint-thai" href="#" data-toggle="modal" data-target="#agreement"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>ข้อตกลงการปริวรรต</a>
                         <select name="src-type"  id="src-type" class="form-control select-type translite" style="overflow: scroll;" >
-                            <optgroup label="ไทย">
-                                <option value="thai"  >ไทย-คงรูป(แบบแผน)</option>                             
+                            <optgroup label="อุษาคเนย์">
+                                <option value="thai"  >ไทย-คงรูป(แบบแผน)</option>
+                                <option value="burmese">พม่า (က)</option>
                             </optgroup>
-                            <optgroup label="อินเดียโบราณ">
-                                <option value="brahmi">พราหมี (𑀅)</option>                            
-                            </optgroup>
+                            <!--<optgroup label="ทดสอบ">-->
+                            <!--<option value="brahmi">พราหมี (𑀅)</option>-->                           
+                            <!--</optgroup>-->
                             <optgroup label="อินเดีย">                             
                                 <option value="devanagari" selected="selected" >เทวนาครี (अ)</option>
                                 <option value="bengali">เบงกาลี (অ)</option>
@@ -32,7 +33,7 @@
                                 <option value="telugu">เตลูกู (అ)</option>
                                 <option value="kannada">กันนาดา (ಅ)</option>
                                 <option value="malayalam">มาลายัม (അ)</option>
-                                
+
                             </optgroup>
                             <optgroup label="โรมัน">
                                 <option value="iast" >โรมัน IAST</option>
@@ -43,18 +44,19 @@
                             </optgroup>                           
                         </select>
                     </div>
-                    <div class="form-group">
-                        <!--<label>Message *</label>-->
-                        <textarea name="src-txt"  id="src-txt" required="required" class="form-control translite" rows="8">गोब्राह्मणेभ्यः शुभमस्तु नित्यं लोकाः समस्ताः सुखिनोभवन्तु ॥</textarea>
-                    </div>                         
+                    <!--                    <div class="form-group">
+                                            <label>Message *</label>
+                                            <textarea name="src-txt"  id="src-txt" required="required" class="form-control translite" rows="8">गोब्राह्मणेभ्यः शुभमस्तु नित्यं लोकाः समस्ताः सुखिनोभवन्तु ॥</textarea>
+                                        </div>                         -->
                 </div>
-                <div class="col-sm-5">
+                <div class="col-sm-4">
                     <div class="form-group">
                         <label>ตัวอักษรเปรียบเทียบอื่นๆ</label>
                         <select class="form-control select-type translite" name="dest-type"  id="dest-type">
-                            <optgroup label="อินเดียโบราณ">
-                                <option value="brahmi">พราหมี (𑀅)</option>                            
-                            </optgroup>
+                            <!--                            <optgroup label="อินเดียโบราณ">
+                                                            <option value="brahmi">พราหมี (𑀅)</option> 
+                                                             <option value="thai"  >ไทย-คงรูป(แบบแผน)</option>    
+                                                        </optgroup>-->
                             <optgroup label="อินเดีย">
                                 <option value="devanagari">เทวนาครี (अ)</option>
                                 <option value="bengali">เบงกาลี (অ)</option>
@@ -76,10 +78,23 @@
 
                         </select>
                     </div>
+                    <!--                    <div class="form-group">
+                                            <label>Message *</label>
+                                            <textarea name="dest-txt"  id="dest-txt" required="required" class="form-control translite" rows="8" maxlength="1000">gobrāhmaṇebhyaḥ śubhamastu nityaṃ lokāḥ samastāḥ sukhinobhavantu ॥</textarea>
+                                        </div>                                      -->
+                </div>
+
+                <div class="col-sm-2">
                     <div class="form-group">
-                        <!--<label>Message *</label>-->
-                        <textarea name="dest-txt"  id="dest-txt" required="required" class="form-control translite" rows="8" maxlength="1000">gobrāhmaṇebhyaḥ śubhamastu nityaṃ lokāḥ samastāḥ sukhinobhavantu ॥</textarea>
-                    </div>                                      
+                        <label>ข้อความภาษา</label>
+                        <select class="form-control select-type translite" name="lang"  id="lang" >
+                            <option value="sans" selected="selected" >สันสกฤต</option>
+                            <option value="pali">บาฬี</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group center" style="margin-left: 8.333333333333332%;width: 85%;">
+                    <textarea name="src-txt"  id="src-txt" required="required" class="form-control translite" rows="8">गोब्राह्मणेभ्यः शुभमस्तु नित्यं लोकाः समस्ताः सुखिनोभवन्तु ॥</textarea>
                 </div>
                 <div class="form-group center">
                     <a href="#transliterate-compare" id="translite-button" class="btn btn-info btn-xl page-scroll">

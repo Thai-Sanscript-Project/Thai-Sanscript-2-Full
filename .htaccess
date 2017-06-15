@@ -29,16 +29,16 @@ ExpiresDefault "access 1 month"
 ## EXPIRES CACHING ##
 
 # 1 Month for all your static assets
- <filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
- Header set Cache-Control "max-age=2592000, public"
- </filesMatch>
+# <filesMatch ".(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+# Header set Cache-Control "max-age=2592000, public"
+# </filesMatch>
  
- # 1 DAYS for rss feeds and robots
- <filesMatch ".(xml|txt)$">
- Header set Cache-Control "max-age=86400, public, must-revalidate"
- </filesMatch>
+# 1 DAYS for rss feeds and robots
+# <filesMatch ".(xml|txt)$">
+# Header set Cache-Control "max-age=86400, public, must-revalidate"
+# </filesMatch>
   
- # 4 HOURS for your real articles files
- <filesMatch ".(html|htm)$">
- Header set Cache-Control "max-age=14400, must-revalidate"
- </filesMatch>
+# 4 HOURS for your real articles files
+# <filesMatch ".(html|htm)$">
+# Header set Cache-Control "max-age=14400, must-revalidate"
+# </filesMatch>

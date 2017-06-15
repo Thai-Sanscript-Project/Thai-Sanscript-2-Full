@@ -39,8 +39,8 @@ class ThaiSanscriptAPI {
         return $this->thaiInformRule->convert($txt);
     }
 
-    public function convertThai($txt) {
-        return $this->thaiRule->convert($txt);
+    public function convertThai($txt,$lang) {
+        return $this->thaiRule->convert($txt,$lang);
     }
 
 //    public function jsonOutput($txt) {
@@ -55,9 +55,9 @@ class ThaiSanscriptAPI {
 //        } 
 //        return json_encode($output);
 //    }
-    public function jsonOutput($txt) {
+    public function jsonOutput($txt,$lang) {
         $txt = $this->prepareTxt($txt);
-        $output = $this->convertLineTxt($txt);
+        $output = $this->convertLineTxt($txt,$lang);
         return json_encode($output);
     }
 
@@ -69,7 +69,7 @@ class ThaiSanscriptAPI {
         return $output;
     }
 
-    public function convertLineTxt($txt) {
+    public function convertLineTxt($txt,$lang) {
 
         $output = array();
         $output[0] = array();
@@ -77,7 +77,7 @@ class ThaiSanscriptAPI {
         $txtPool = preg_split('/\r\n|\r|\n/', $txt);
         foreach ($txtPool as $i => $line) {
             $output[0][$i] = explode($this->spaceDilimiter, $this->convertThaiInform($line));
-            $output[1][$i] = explode($this->spaceDilimiter, $this->convertThai($line));
+            $output[1][$i] = explode($this->spaceDilimiter, $this->convertThai($line,$lang));
         }
         return $output;
     }

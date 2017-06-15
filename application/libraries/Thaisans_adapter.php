@@ -23,8 +23,8 @@ class Thaisans_adapter {
         $this->sanscript = new Sanscript();
     }
 
-    public function jsonOutput($txt) {
-        return $this->thaiSanscriptAPI->jsonOutput($txt);
+    public function jsonOutput($txt,$lang) {
+        return $this->thaiSanscriptAPI->jsonOutput($txt,$lang);
     }
 
     public function sanscript($txt, $from = "devanagari", $to = "iast") {

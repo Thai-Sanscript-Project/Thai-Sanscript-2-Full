@@ -24,7 +24,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://www.thai-sanscript.com/';
-$config['base_url'] = 'http://localhost/Thai-Sanscript/';
+//$config['base_url'] = 'http://localhost/Thai-Sanscript/';
+$config['base_url'] = 'http://localhost/sans/';
+
 
 /*
 |--------------------------------------------------------------------------
