@@ -14,7 +14,7 @@
                         <p>
                             เป็นซอฟต์แวร์โอเพนซอร์ซ รหัสโปรแกรม อนุญาตให้ใช้ได้ตาม                  
                             สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า-อนุญาตแบบเดียวกัน 4.0 International
-                            อยู่บนพื้นฐานของงานที่ learnsanskrit.org/tools/sanscript
+                            อยู่บนพื้นฐานของงานที่ learnsanskrit.org/tools/sanscript & virtualvinodh.com/aksharamukha
 
                         </p>
                     </div>

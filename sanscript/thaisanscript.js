@@ -21,27 +21,27 @@ var vowelBackconsonantRoman = 'a ā i ī u ū ṛ ṝ ḷ ḹ e o'.split(' ');
 var thaiSymbol = "๐ ๑ ๒ ๓ ๔ ๕ ๖ ๗ ๘ ๙ ' ฯ ๚".split(' ');
 var romanSymbol = "0 1 2 3 4 5 6 7 8 9 ' । ॥".split(' ');
 var burmese_result = "";
-function burmesesanscript(txt, urlEngine) {
+//function burmesesanscript(txt, urlEngine) {
+////
+////    $.post(urlEngine, {name: txt})
+////            .done(function (data) {
+////                burmese_result = data;
+////            });
+////    return burmese_result;
+////
 //
-//    $.post(urlEngine, {name: txt})
-//            .done(function (data) {
-//                burmese_result = data;
-//            });
-//    return burmese_result;
-//
-
-    $.ajax({
-        type: 'POST',
-        url: urlEngine,
-        data: ({text:txt}),
-        dataType: 'html',
-        async: false,
-        success: function (result) {
-            idata = result;
-        }
-    });
-    return idata;
-}
+//    $.ajax({
+//        type: 'POST',
+//        url: urlEngine,
+//        data: ({text:txt}),
+//        dataType: 'html',
+//        async: false,
+//        success: function (result) {
+//            idata = result;
+//        }
+//    });
+//    return idata;
+//}
 
 function thaisanscript(txt) {
     var lineSplit = txt.split(/\r\n|\r|\n/);

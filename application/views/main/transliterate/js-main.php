@@ -2,7 +2,7 @@
 <script type="text/javascript">
 
     //console.log(Sanscript.t("𑀕𑁅𑀩𑁆𑀭𑀸𑀳𑁆𑀫𑀡𑁂𑀪𑁆𑀬𑀂 𑀰𑀻𑀪𑀫𑀲𑁆𑀢𑀻 𑀦𑀹𑀢𑁆𑀬𑀁 𑀮𑁅𑀓𑀸𑀂 𑀲𑀫𑀲𑁆𑀢𑀸𑀂 𑀲𑀻𑀔𑀹𑀦𑁅𑀪𑀯𑀦𑁆𑀢𑀻", "brahmi", "iast"));
-    var urlEngine = "<?php echo base_url() ?>/aksharamukha/Api.php";
+    var urlEngine = "<?php echo base_url() ?>/aksharamukha/Api1.php";
     function getSrcTxtval() {
         return $("#src-txt").val().toLowerCase();
     }
@@ -21,8 +21,8 @@
     function getDestTypeVal() {
         return $("#dest-type").val();
     }
-    
-     function getLang() {
+
+    function getLang() {
         return $("#lang").val();
     }
 
@@ -71,6 +71,19 @@
             output = Sanscript.t(txt, srcType, 'iast');
         }
         return output;
+    }
+    function burmesesanscript(txt, urlEngine) {
+        $.ajax({
+            type: 'POST',
+            url: urlEngine,
+            data: ({source: txt}),
+            dataType: 'html',
+            async: false,
+            success: function (result) {
+                idata = result;
+            }
+        });
+        return idata;
     }
 </script>
 
