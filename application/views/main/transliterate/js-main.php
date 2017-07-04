@@ -4,7 +4,7 @@
     //console.log(Sanscript.t("𑀕𑁅𑀩𑁆𑀭𑀸𑀳𑁆𑀫𑀡𑁂𑀪𑁆𑀬𑀂 𑀰𑀻𑀪𑀫𑀲𑁆𑀢𑀻 𑀦𑀹𑀢𑁆𑀬𑀁 𑀮𑁅𑀓𑀸𑀂 𑀲𑀫𑀲𑁆𑀢𑀸𑀂 𑀲𑀻𑀔𑀹𑀦𑁅𑀪𑀯𑀦𑁆𑀢𑀻", "brahmi", "iast"));
     var urlEngine = "<?php echo base_url() ?>/aksharamukha/Api1.php";
     function getSrcTxtval() {
-        return $("#src-txt").val().toLowerCase();
+        return $("#src-txt").val();
     }
     function getDestTxtVal() {
         return $("#dest-txt").val();

@@ -206,6 +206,13 @@
             consonants: 'k kh g gh ṅ c ch j jh ñ ṭ ṭh ḍ ḍh ṇ t th d dh n p ph b bh m y r l v ś ṣ s h ḻ kṣ jñ'.split(' '),
             symbols: "0 1 2 3 4 5 6 7 8 9 oṃ ' । ॥".split(' ')
         },
+		iasttest: {
+            vowels: 'a a- i i- u u- r. r.- l. l.-  e ai  o au'.split(' '),
+            other_marks: ['m.', 'h.', 'm̐'],
+            virama: [''],
+            consonants: 'k kh g gh ṅ c ch j jh n- t. t.h d. d.h n. t th d dh n p ph b bh m y r l v ś s. s h l- ks. jn-'.split(' '),
+            symbols: "0 1 2 3 4 5 6 7 8 9 om. ' । ॥".split(' ')
+        },
         /* ITRANS
          * ------
          * One of the first romanization schemes -- and one of the most

@@ -41,6 +41,7 @@
                                 <option value="itrans">โรมัน ITRANS</option>
                                 <option value="hk">โรมัน Harvard-Kyoto</option>
                                 <option value="slp1">โรมัน SLP</option>
+								 <option value="iasttest">โรมัน ทดสอบ</option>
                             </optgroup>                           
                         </select>
                     </div>
@@ -74,6 +75,7 @@
                                 <option value="itrans">โรมัน ITRANS</option>
                                 <option value="hk">โรมัน Harvard-Kyoto</option>
                                 <option value="slp1">โรมัน SLP</option>
+								 <option value="iasttest">โรมัน ทดสอบ</option>
                             </optgroup> 
 
                         </select>
