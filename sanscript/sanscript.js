@@ -206,11 +206,12 @@
             consonants: 'k kh g gh ṅ c ch j jh ñ ṭ ṭh ḍ ḍh ṇ t th d dh n p ph b bh m y r l v ś ṣ s h ḻ kṣ jñ'.split(' '),
             symbols: "0 1 2 3 4 5 6 7 8 9 oṃ ' । ॥".split(' ')
         },
-		iasttest: {
+        iasttest: {
+            
             vowels: 'a a- i i- u u- r. r.- l. l.-  e ai  o au'.split(' '),
-            other_marks: ['m.', 'h.', 'm̐'],
+            other_marks: ['m.', 'h.', 'm(.'],
             virama: [''],
-            consonants: 'k kh g gh ṅ c ch j jh n- t. t.h d. d.h n. t th d dh n p ph b bh m y r l v ś s. s h l- ks. jn-'.split(' '),
+            consonants: 'k kh g gh n^. c ch j jh n^ t. t.h d. d.h n. t th d dh n p ph b bh m y r l v s+ s. s h l_ ks. jn^'.split(' '),
             symbols: "0 1 2 3 4 5 6 7 8 9 om. ' । ॥".split(' ')
         },
         /* ITRANS
@@ -411,7 +412,7 @@
     (function () {
         // Set up roman schemes
         var kolkata = schemes.kolkata = cheapCopy(schemes.iast),
-                schemeNames = 'iast itrans hk kolkata slp1 velthuis wx'.split(' ');
+                schemeNames = 'iast itrans hk kolkata slp1 velthuis wx iasttest'.split(' ');
         kolkata.vowels = 'a ā i ī u ū ṛ ṝ ḷ ḹ e ē ai o ō au'.split(' ');
 
         // These schemes already belong to Sanscript.schemes. But by adding
