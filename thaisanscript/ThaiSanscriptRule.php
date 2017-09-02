@@ -57,7 +57,7 @@ class ThaiSanscriptRule {
         ThaiSanscriptRule::printTrackMode($txt, "SingleCon");
         $txt = $this->util->convertRomanizeSingleVowel($txt);
         ThaiSanscriptRule::printTrackMode($txt, "SingleVow");
-        $txt = $this->convertAnusvaraAndChandrabindu($txt);
+        $txt = $this->convertAnusvaraAndChandrabindu($txt,"sans");
         ThaiSanscriptRule::printTrackMode($txt, "AnusvaraAndChandrabindu");
         $txt = $this->util->convertThaiVowelInFist($txt);
         ThaiSanscriptRule::printTrackMode($txt, "ThaiVowelInFist");

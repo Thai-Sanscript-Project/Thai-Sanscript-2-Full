@@ -100,7 +100,7 @@ class ThaiSanscriptAPI {
 
     public function transliterationTracking($romanize, $mode = 1) {
         if ($mode == 1) {
-            $real = $this->thaiRule->convert($romanize);
+            $real = $this->thaiRule->convert($romanize,'sans');
             $track = $this->thaiRule->convertTrackMode($romanize);
         } else {
             $real = $this->thaiInformRule->convert($romanize);
