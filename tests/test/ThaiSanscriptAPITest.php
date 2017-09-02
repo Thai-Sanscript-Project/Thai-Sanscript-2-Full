@@ -36,7 +36,7 @@ class ThaiSanscriptAPITest extends PHPUnit_Framework_TestCase {
     public function testConvertThai() {
         $asrt = "โลกาห์ สะมัสตาห์ สุขิโนภะวันตุ";
         $param = "lokāḥ samastāḥ sukhinobhavantu";
-        $src = $this->api->convertThai($param);
+        $src = $this->api->convertThai($param,"sans");
         $this->assertEquals($asrt, $src);
     }
 

@@ -41,7 +41,7 @@
                                 <option value="itrans">โรมัน ITRANS</option>
                                 <option value="hk">โรมัน Harvard-Kyoto</option>
                                 <option value="slp1">โรมัน SLP</option>
-								 <option value="iasttest">โรมัน ทดสอบ</option>
+                                <option value="iasttest">โรมัน ทดสอบ</option>
                             </optgroup>                           
                         </select>
                     </div>
@@ -75,12 +75,12 @@
                                 <option value="itrans">โรมัน ITRANS</option>
                                 <option value="hk">โรมัน Harvard-Kyoto</option>
                                 <option value="slp1">โรมัน SLP</option>
-								 <option value="iasttest">โรมัน ทดสอบ</option>
+                                <option value="iasttest">โรมัน ทดสอบ</option>
                             </optgroup> 
 
                         </select>
                     </div>
-                    <!--                    <div class="form-group">
+<!--                                        <div class="form-group">
                                             <label>Message *</label>
                                             <textarea name="dest-txt"  id="dest-txt" required="required" class="form-control translite" rows="8" maxlength="1000">gobrāhmaṇebhyaḥ śubhamastu nityaṃ lokāḥ samastāḥ sukhinobhavantu ॥</textarea>
                                         </div>                                      -->

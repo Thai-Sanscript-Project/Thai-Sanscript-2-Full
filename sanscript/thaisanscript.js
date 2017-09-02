@@ -92,7 +92,7 @@ function swapFrontVowel(txt) {
     var charList = txt.split('');
     for (var i = charList.length - 1; i >= 0; i--) { // backward loop prevent infinity loop
         if (isMoveFrontVowel(charList, i)) {
-            if (charList[i + 2] === "ฺ" && charList[i + 3] === "ร") {
+            if (charList[i + 2] === "ฺ" && (charList[i + 3] === "ร" || charList[i + 3] === "ล" ) ) {
                 swapArray(charList, i);
                 swapArray(charList, i + 1);
                 swapArray(charList, i + 2);
