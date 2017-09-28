@@ -17,12 +17,13 @@ class ThaiSanscriptInformRule {
         $this->util = new Util(TRUE);
     }
 
-    public function convert($txt) {
-        
+    public function convert($txt, $lang = "sans") {
+
+        //        $txt = $this->convertA($txt);
         $txt = $this->util->convertRomanChandrabinduToSingle($txt);
         $txt = $this->util->convertNumber($txt);
         $txt = $this->util->convertRomanizeMixConsonant($txt);
-        $txt = $this->util->convertRomanizeMixVowel($txt);
+        $txt = $this->util->convertRomanizeMixVowel($txt, $lang);
         $txt = $this->util->convertRomanizeSingleConsonant($txt);
         $txt = $this->util->convertRomanizeSingleVowel($txt);
         $txt = $this->convertBindu($txt);
@@ -37,39 +38,44 @@ class ThaiSanscriptInformRule {
     }
 
     public function convertTrackMode($txt) {
-        $this->printTrackMode($txt);
+
+        $this->printTrackMode($txt,"Start");
         $txt = $this->util->convertRomanChandrabinduToSingle($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"Chandrabindu");
         $txt = $this->util->convertNumber($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"Number");
         $txt = $this->util->convertRomanizeMixConsonant($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"MixConsonant");
         $txt = $this->util->convertRomanizeMixVowel($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"MixVowel");
         $txt = $this->util->convertRomanizeSingleConsonant($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"SingleConsonant");
         $txt = $this->util->convertRomanizeSingleVowel($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"SingleVowel");
         $txt = $this->convertBindu($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"Bindu");
         $txt = $this->util->convertThaiVowelInFist($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"ThaiVowelInFist");
         $txt = $this->util->convertThaiVowelPrefix($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"ThaiVowelPrefix");
         $txt = $this->removeA($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"removeA");
         $txt = $this->swapAnusvaraAndChandrabindu($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"swapAnusvara");
         $txt = $this->convertChandrabindu($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"Chandrabindu");
         $txt = $this->util->convertThaiAAInFist($txt);
-        $this->printTrackMode($txt);
+        $this->printTrackMode($txt,"ThaiAAInFist");
 
         return $txt;
     }
 
-    public function printTrackMode($txt) {
-        echo ($txt . " -> ");
+    public function printTrackMode($txt,$type) {
+        echo ("[".$type."]" .$txt . " -> ");
+    }
+
+    public function convertA($txt) {
+        return str_replace("a", "A", $txt);
     }
 
     public function convertBindu($txt) {

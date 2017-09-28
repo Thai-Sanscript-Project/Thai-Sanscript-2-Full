@@ -35,11 +35,11 @@ class ThaiSanscriptAPI {
         return $list;
     }
 
-    public function convertThaiInform($txt) {
-        return $this->thaiInformRule->convert($txt);
+    public function convertThaiInform($txt,$lang="sans") {
+        return $this->thaiInformRule->convert($txt,$lang);
     }
 
-    public function convertThai($txt,$lang) {
+    public function convertThai($txt,$lang="sans") {
         return $this->thaiRule->convert($txt,$lang);
     }
 
@@ -76,7 +76,7 @@ class ThaiSanscriptAPI {
         $output[1] = array();
         $txtPool = preg_split('/\r\n|\r|\n/', $txt);
         foreach ($txtPool as $i => $line) {
-            $output[0][$i] = explode($this->spaceDilimiter, $this->convertThaiInform($line));
+            $output[0][$i] = explode($this->spaceDilimiter, $this->convertThaiInform($line,$lang));
             $output[1][$i] = explode($this->spaceDilimiter, $this->convertThai($line,$lang));
         }
         return $output;

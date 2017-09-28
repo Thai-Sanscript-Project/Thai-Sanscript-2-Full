@@ -84,7 +84,10 @@ class Util {
         return str_replace($this->thaimapper->singleVowelRm, $this->thaimapper->singleVowelTh, $romanize);
     }
 
-    public function convertRomanizeMixVowel($romanize) {
+    public function convertRomanizeMixVowel($romanize,$lang = "sans") {
+        if($lang == "pali"){
+            $this->thaimapper->setLang("pali");
+        }
         return str_replace($this->thaimapper->mixVowelRm, $this->thaimapper->mixVowelTh, $romanize);
     }
 
@@ -165,7 +168,7 @@ class Util {
             foreach ($charList as $index => $char) {
 //                for ($index = 1; $index < count($charList); $index++) {
                 if ($index > 0) {
-                    $check1 = !$this->isThaiConsonant($charList[$index - 1]) && in_array($char, $s1); //$char == $key;
+                    $check1 = ($charList[$index - 1] == "อ" || !$this->isThaiConsonant($charList[$index - 1])) && in_array($char, $s1); //$char == $key;
                     $check2 = $charList[$index] != "เ" && $charList[$index] != "า"; //ยกเว้นไว้กรณี สระเอา ก่อน
 
                     if ($check1 && $check2) {

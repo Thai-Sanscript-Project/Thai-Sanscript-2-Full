@@ -182,6 +182,18 @@ class ThaiSanscript {
 
     function setLang($lang) {
         $this->lang = $lang;
+        if ($this->lang == "pali") {
+            
+            $this->mixVowel = array(
+                "r̥" => "ฤ",
+                "m̐" => "ँ"
+            );
+            $return = $this->separate($this->mixVowel);
+            $this->mixVowelTh = $return['th'];
+            $this->mixVowelRm = $return['rm'];
+//            print_r($return);
+        }
+ 
     }
 
     private function separate($array) {

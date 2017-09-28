@@ -27,7 +27,7 @@ class ThaiSanscriptRule {
         $txt = $this->util->convertRomanChandrabinduToSingle($txt);
         $txt = $this->util->convertNumber($txt);
         $txt = $this->util->convertRomanizeMixConsonant($txt);
-        $txt = $this->util->convertRomanizeMixVowel($txt);
+        $txt = $this->util->convertRomanizeMixVowel($txt,$lang);
         $txt = $this->util->convertRomanizeSingleConsonant($txt);
         $txt = $this->util->convertRomanizeSingleVowel($txt);
         $txt = $this->convertAnusvaraAndChandrabindu($txt,$lang);

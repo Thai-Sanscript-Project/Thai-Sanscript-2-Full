@@ -42,6 +42,9 @@
 //            alert(txt);
             srcType = 'iast';
         }
+        if (srcType === 'iast') {
+            txt = txt.toLowerCase();
+        }
         console.log("getSrcTypeText: " + srcType);
         console.log("getDestTypeText: " + destType);
         output = Sanscript.t(txt, srcType, destType);

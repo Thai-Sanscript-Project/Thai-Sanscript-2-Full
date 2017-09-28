@@ -42,7 +42,7 @@ class Thaisans_adapter {
 
     public function toThai($txt) {
         $txt = $this->thaiSanscriptAPI->prepareTxt($txt);
-        return $this->thaiSanscriptAPI->convertLineTxt($txt);
+        return $this->thaiSanscriptAPI->convertLineTxt($txt,"sans");
     }
 
 //bengali
