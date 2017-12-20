@@ -152,7 +152,7 @@ class ThaiSanscriptRuleTest extends PHPUnit_Framework_TestCase {
 
         $src = "ะ า ิ ี ุ ู เ โ ะ ไ";
         $src = $this->util->convertThaiVowelInFist($src);
-        $asrt = "อะ อา อิ อี อุ อู เอ โอ อะ ไอ ";
+        $asrt = "อะ อา อิ อี อุ อู เอ โอ อะ ไอ";
         $this->assertEquals($asrt, $src);
     }
 

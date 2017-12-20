@@ -150,7 +150,7 @@ class Util {
     }
 
     public function convertThaiVowelInFist($thaiChar) {
-        $thaiChar = $thaiChar . " "; // before space 3 after space 6  reserve  for condition
+        $thaiChar = " ".$thaiChar . " "; // before space 3 after space 6  reserve  for condition
         $mapping = $this->thaimapper->thaiVowelInFist;
         $charList = $this->charList($thaiChar);
         $s1 = $this->thaimapper->thaiVowelInFist1;
@@ -183,7 +183,7 @@ class Util {
                     }
                 }
             }
-            $thaiChar = $this->convertListTostring($charList);
+            $thaiChar = trim($this->convertListTostring($charList));
             $thaiChar = str_replace("\xE2\x80\x8D", "", $thaiChar); //Remove ZERO WIDTH JOINER
         }
 //        }
