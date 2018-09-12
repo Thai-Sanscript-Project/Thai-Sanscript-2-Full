@@ -1,4 +1,26 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<style>
+    @font-face {
+        font-family: lanexang_pali;
+        src: url(<?php echo_css("Lanexang_Pali.ttf") ?>);
+    }
+
+    .lao{
+        font-family: lanexang_pali;
+    }
+
+    .glyphicon-class-dest {
+        display: block;
+        text-align: center;
+        word-wrap: break-word;
+        font-size: 19px;
+        font-weight: bold;
+       
+        -webkit-font-smoothing: antialiased;
+        color: #003399;
+    }
+
+</style>
 <section id="contact-info" style="background: #f2f2f2;">
     <div id="translite-form" class="container">
         <div class="center">        
@@ -15,14 +37,17 @@
                     <div class="form-group">
                         <label>ตัวอักษรต้นฉบับ</label>   
                         <a id="hint-thai" href="#" data-toggle="modal" data-target="#agreement"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>ข้อตกลงการปริวรรต</a>
+                        <a id="hint-lao" href="#" data-toggle="modal" data-target="#agreement" style="display: none"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>ติดตั้งฟอนต์ลาว</a>                  
                         <select name="src-type"  id="src-type" class="form-control select-type translite" style="overflow: scroll;" >
                             <optgroup label="อุษาคเนย์">
-                                <option value="thai"  >ไทย-คงรูป(แบบแผน)</option>
-                                <option value="burmese">พม่า (က)</option>
+                                <option value="thai">ไทย-คงรูป(แบบแผน)</option>
+                                <option value="lao" class="lao">ลาว (ກ)</option>
+                                <option value="burmese">พม่า (က)</option>                                
                             </optgroup>
                             <!--<optgroup label="ทดสอบ">-->
                             <!--<option value="brahmi">พราหมี (𑀅)</option>-->                           
                             <!--</optgroup>-->
+
                             <optgroup label="อินเดีย">                             
                                 <option value="devanagari" selected="selected" >เทวนาครี (अ)</option>
                                 <option value="bengali">เบงกาลี (অ)</option>
@@ -33,7 +58,6 @@
                                 <option value="telugu">เตลูกู (అ)</option>
                                 <option value="kannada">กันนาดา (ಅ)</option>
                                 <option value="malayalam">มาลายัม (അ)</option>
-
                             </optgroup>
                             <optgroup label="โรมัน">
                                 <option value="iast" >โรมัน IAST</option>
@@ -58,6 +82,9 @@
                                                             <option value="brahmi">พราหมี (𑀅)</option> 
                                                              <option value="thai"  >ไทย-คงรูป(แบบแผน)</option>    
                                                         </optgroup>-->
+                            <optgroup label="อุษาคเนย์">                               
+                                <option value="lao" class="lao">ลาว (ກ)</option>                                       
+                            </optgroup>
                             <optgroup label="อินเดีย">
                                 <option value="devanagari">เทวนาครี (अ)</option>
                                 <option value="bengali">เบงกาลี (অ)</option>
@@ -80,10 +107,10 @@
 
                         </select>
                     </div>
-<!--                                        <div class="form-group">
-                                            <label>Message *</label>
-                                            <textarea name="dest-txt"  id="dest-txt" required="required" class="form-control translite" rows="8" maxlength="1000">gobrāhmaṇebhyaḥ śubhamastu nityaṃ lokāḥ samastāḥ sukhinobhavantu ॥</textarea>
-                                        </div>                                      -->
+                    <!--                                        <div class="form-group">
+                                                                <label>Message *</label>
+                                                                <textarea name="dest-txt"  id="dest-txt" required="required" class="form-control translite" rows="8" maxlength="1000">gobrāhmaṇebhyaḥ śubhamastu nityaṃ lokāḥ samastāḥ sukhinobhavantu ॥</textarea>
+                                                            </div>                                      -->
                 </div>
 
                 <div class="col-sm-2">

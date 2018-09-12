@@ -15,19 +15,23 @@
         if (desttype === 'none') {
             desttype = 'thai';
         }
-            var map = Sanscript.makeMap(srctype, desttype, "");
-            var p = map.letters;
-            var txt = '';
-            for (var key in p) {
-                if (p.hasOwnProperty(key)) {
-                    txt += "<li><span class='glyphicon'>" + key + "</span><span class='glyphicon-class'>" + p[key] + "</span></li>";
-                }
+        var map = Sanscript.makeMap(srctype, desttype, "");
+        var p = map.letters;
+        var txt = '';
+        for (var key in p) {
+            if (p.hasOwnProperty(key)) {
+                var src_class = "class='glyphicon src " + srctype + "'";
+                var dest_class = "class='glyphicon-class-dest dest " + desttype + "'";
+                txt += "<li><span " + src_class + ">" + key + "</span><span " + dest_class + ">" + p[key] + "</span></li>";
             }
-            $('#table-compare').html(txt);
-        
+        }
+        $('#table-compare').html(txt);
+
     }
     function changeHeaderCompare() {
         $('#txt-form').html(getSrcTypeText());
         $('#txt-to').html(getDestTypeText());
     }
+
+
 </script>
