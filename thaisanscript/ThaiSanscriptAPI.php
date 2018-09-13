@@ -23,7 +23,7 @@ class ThaiSanscriptAPI {
 
     public function prepareTxt($txt) {
         $txt = preg_replace('/\x20+/', $this->spaceDilimiter, $txt);
-        $txt = strtolower($txt);
+        $txt = mb_strtolower($txt);
         return preg_replace('/\x20+/', $this->spaceDilimiter, $txt);
     }
 
