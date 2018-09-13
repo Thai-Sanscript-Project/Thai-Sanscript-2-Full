@@ -99,7 +99,7 @@ class ThaiSanscriptRuleTest extends PHPUnit_Framework_TestCase {
         $romanize = $this->thaiMapper->setRevertFlag($revert, $mapping);
         $src = $this->util->convertRomanizeSingleConsonant($romanize);
         $src = implode("", $src);
-        $asrt = "กคงจชญฏฑณตทนปพมยรลวฬศษสหํห์'";
+        $asrt = "กคงจชญฏฑณตทนปพมยรลวฬศษสหँํห์'";
         $this->assertEquals($asrt, $src);
     }
 
@@ -129,7 +129,7 @@ class ThaiSanscriptRuleTest extends PHPUnit_Framework_TestCase {
         $romanize = $this->thaiMapper->setRevertFlag($revert, $mapping);
         $src = $this->util->convertRomanizeMixVowel($romanize);
         $src = implode("", $src);
-        $asrt = "ไเาฤँ";
+        $asrt = "ไเาฤ";
         $this->assertEquals($asrt, $src);
     }
 
@@ -152,7 +152,7 @@ class ThaiSanscriptRuleTest extends PHPUnit_Framework_TestCase {
 
         $src = "ะ า ิ ี ุ ู เ โ ะ ไ";
         $src = $this->util->convertThaiVowelInFist($src);
-        $asrt = "อะ อา อิ อี อุ อู เอ โอ อะ ไอ";
+        $asrt = "อะ อา อิ อี อุ อู เอ โอ อะ ไอ ";
         $this->assertEquals($asrt, $src);
     }
 
