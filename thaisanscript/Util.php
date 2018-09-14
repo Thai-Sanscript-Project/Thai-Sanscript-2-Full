@@ -21,8 +21,8 @@ class Util {
 
     public $cancleMarkLao = "໌";
     public $cancleMarkThai = "์";
-    public $vowelThai = "ะ า ิ ี ุ ู โ ไ เ ฤๅ ฦๅ ฤ ฦ";
-    public $vowelLao = "ະ າ ິ ີ ຸ ູ ໂ ໄ ເ ຣື ລື ຣຶ ລຶ";
+    public $vowelThai = "ั ะ า ิ ี ุ ู โ ไ เ ฤๅ ฦๅ ฤ ฦ";
+    public $vowelLao = "ັ ະ າ ິ ີ ຸ ູ ໂ ໄ ເ ຣື ລື ຣຶ ລຶ";
 
     public function __construct($inForm = FALSE) {
         $this->thaimapper = new ThaiSanscript($inForm);
