@@ -37,7 +37,7 @@
                     <div class="form-group">
                         <label>ตัวอักษรต้นฉบับ</label>   
                         <a id="hint-thai" href="#" data-toggle="modal" data-target="#agreement"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>ข้อตกลงการปริวรรต</a>
-                        <a id="hint-lao" href="#" data-toggle="modal" data-target="#agreement" style="display: none"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>ติดตั้งฟอนต์ลาว</a>                  
+                        <a id="hint-lao" href="#" data-toggle="modal" data-target="#agreement-lao" style="display: none"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>ติดตั้งฟอนต์ลาว</a>                  
                         <select name="src-type"  id="src-type" class="form-control select-type translite" style="overflow: scroll;" >
                             <optgroup label="อุษาคเนย์">
                                 <option value="thai">ไทย-คงรูป(แบบแผน)</option>
