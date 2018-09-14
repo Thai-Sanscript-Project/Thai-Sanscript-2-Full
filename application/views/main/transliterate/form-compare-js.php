@@ -17,7 +17,7 @@
 
         var sendToBackend;
         var destination;
-        
+
         if (srcType === 'burmese') {
             var out = transliteToBackend();
             sendToBackend = out[0];
@@ -40,7 +40,9 @@
 //                    "sanskrit-romanize": roman.val(),
 //                    "sanskrit-devanagari": devanagari.val(),
                 "src-txt": sendToBackend,
-                "lang": getLang()
+                "lang": getLang(),
+                "srcType": srcType,
+                "destType": getDestTypeVal()
             },
             success: function (data) {
                 var display = new Array(1, 1, 1, 1);
@@ -50,14 +52,21 @@
                     display = new Array(1, 1, 0, 1);
                     showAndCheck = new Array(1, 1, 0, 0);
                 }
-
+                var lao = "";
+                var normal_header = 'ไทย-ปรับรูป(ทั่วไป)';
+                var normal_type = "thai";
+                if (getDestTypeVal() === 'lao') {
+                    destination = data[2];
+                    normal_header = 'ลาว-แบบปรับรูป';
+                    normal_type = "lao";
+                }
 
                 var html = header() +
                         checkboxList(display, showAndCheck) +
-                        langSection('1', getSrcTypeText(), source, display[0], showAndCheck[0]) +
-                        langSection('2', getDestTypeText(), destination, display[1], showAndCheck[1]) +
-                        langSection('3', 'ไทย-คงรูป(แบบแผน)', data[0], display[2], showAndCheck[2]) +
-                        langSection('4', 'ไทย-ปรับรูป(ทั่วไป)', data[1], display[3], showAndCheck[3]) +
+                        langSection('1', getSrcTypeText(), source, display[0], showAndCheck[0], getSrcTypeval()) +
+                        langSection('2', getDestTypeText(), destination, display[1], showAndCheck[1], getDestTypeVal()) +
+                        langSection('3', 'ไทย-คงรูป(แบบแผน)', data[0], display[2], showAndCheck[2], "thai") +
+                        langSection('4', normal_header, data[1], display[3], showAndCheck[3], normal_type) +
                         backButton();
                 $('#transliterate-compare').html(html);
             },
@@ -118,15 +127,15 @@
         return html;
     }
 
-    function langSection(langCode, langName, dataList, display, showAndCheck) {
+    function langSection(langCode, langName, dataList, display, showAndCheck, langCodetype) {
         var html = '';
         var show = '';
         if (showAndCheck === 0) {
             show = ' style = "display:none" ';
         }
         if (display === 1) {
-            html = '<div id="' + langCode + '" class="code"  ' + show + '><p class="text-center code-p">' + langName + '</p>' +
-                    '<ol class="code-ol">' + getLine(langCode, dataList) + '</ol></div>';
+            html = '<div id="' + langCode + '" class="code ' + langCodetype + '"  ' + show + '><p class="text-center code-p">' + langName + '</p>' +
+                    '<ol class="code-ol ' + langCodetype + '">' + getLine(langCode, dataList) + '</ol></div>';
         }
         return html;
     }
@@ -143,12 +152,16 @@
         return html;
     }
     function checkboxList(displayArr, showAndCheckArr) {
+        var normal_header = 'ไทยปรับรูป(ทั่วไป)'
+        if (getDestTypeVal() === 'lao') {
+            normal_header = 'ลาว-แบบปรับรูป';
+        }
 
         var html = '<div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 text-center"><p>' +
                 checkbox(displayArr[0], showAndCheckArr[0], 1, getSrcTypeText()) +
                 checkbox(displayArr[1], showAndCheckArr[1], 2, getDestTypeText()) +
                 checkbox(displayArr[2], showAndCheckArr[2], 3, 'ไทย-คงรูป(แบบแผน)') +
-                checkbox(displayArr[3], showAndCheckArr[3], 4, 'ไทย-ปรับรูป(ทั่วไป)') +
+                checkbox(displayArr[3], showAndCheckArr[3], 4, normal_header) +
                 '</p></div></div></div>';
         return html;
     }

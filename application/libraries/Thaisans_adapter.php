@@ -23,8 +23,8 @@ class Thaisans_adapter {
         $this->sanscript = new Sanscript();
     }
 
-    public function jsonOutput($txt,$lang) {
-        return $this->thaiSanscriptAPI->jsonOutput($txt,$lang);
+    public function jsonOutput($txt, $lang, $destType) {
+        return $this->thaiSanscriptAPI->jsonOutput($txt, $lang, $destType);
     }
 
     public function sanscript($txt, $from = "devanagari", $to = "iast") {
@@ -32,8 +32,8 @@ class Thaisans_adapter {
     }
 
     public function txtLineToArray($txt) {
-        $txtPool =  preg_split('/\r\n|\r|\n/', $txt);
-        $output =array();
+        $txtPool = preg_split('/\r\n|\r|\n/', $txt);
+        $output = array();
         foreach ($txtPool as $i => $line) {
             $output[$i] = explode(" ", $line);
         }
@@ -42,7 +42,7 @@ class Thaisans_adapter {
 
     public function toThai($txt) {
         $txt = $this->thaiSanscriptAPI->prepareTxt($txt);
-        return $this->thaiSanscriptAPI->convertLineTxt($txt,"sans");
+        return $this->thaiSanscriptAPI->convertLineTxt($txt, "sans");
     }
 
 //bengali

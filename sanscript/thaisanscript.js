@@ -3,24 +3,34 @@ var chandrabinduRoman = "̐";
 var anusvaraThai = "ํ";
 var consonantRoman = 'k kh g gh ṅ c ch j jh ñ ṭ ṭh ḍ ḍh ṇ t th d dh n p ph b bh m y r l v ś ṣ s h ḻ'.split(' ');
 var consonantThaiBindu = 'กฺ ขฺ คฺ ฆฺ งฺ จฺ ฉฺ ชฺ ฌฺ ญฺ ฏฺ ฐฺ ฑฺ ฒฺ ณฺ ตฺ ถฺ ทฺ ธฺ นฺ ปฺ ผฺ พฺ ภฺ มฺ ยฺ รฺ ลฺ วฺ ศฺ ษฺ สฺ หฺ ฬฺ'.split(' ');
+
 var consonantThai = 'ก ข ค ฆ ง จ ฉ ช ฌ ญ ฏ ฐ ฑ ฒ ณ ต ถ ท ธ น ป ผ พ ภ ม ย ร ล ว ศ ษ ส ห ฬ'.split(' ');
 
-var backVowelRoman = "i ī u ū ṛ ṝ ḷ ḹ ṃ m̐ ḥ".split(' '); //except ā because au
-var backVowelThai = "ิ ี ุ ู ฤ ฤๅ ฦ ฦๅ ํ ̐ ะ".split(' ');//except า because เา
+
+var backVowelRoman = "ṝ ḹ ṛ ḷ i ī u ū ṃ m̐ ḥ".split(' '); //except ā because au
+var backVowelThai = "ฤๅ ฦๅ ฤ ฦ ิ ี ุ ู ํ ̐ ะ".split(' ');//except า because เา
+
 
 var frontVowelThai = "โ ไ".split(' '); //except เ because เา
+
 var frontVowelRoman = "o ai".split(' ');//except e because au
 var leaveFrontVowelThai = "า เ".split(' ');
+
 var leaveFrontVowelRoman = "ā e".split(' ');
 
-var thaiVowelInFist = "อา อิ อี อุ อู เอ โอ ไอ เอา".split(' ');
-var romanVowelInFist = "ā i ī u ū e o ai au".split(' ');
+var thaiVowelInFist = "ไอ เอา อา อิ อี อุ อู เอ โอ ".split(' ');
+
+var romanVowelInFist = "ai au ā i ī u ū e o ".split(' ');
 
 var vowelBackconsonantRoman = 'a ā i ī u ū ṛ ṝ ḷ ḹ e o'.split(' ');
 
 var thaiSymbol = "๐ ๑ ๒ ๓ ๔ ๕ ๖ ๗ ๘ ๙ ' ฯ ๚".split(' ');
 var romanSymbol = "0 1 2 3 4 5 6 7 8 9 ' । ॥".split(' ');
+
 var burmese_result = "";
+
+
+
 //function burmesesanscript(txt, urlEngine) {
 ////
 ////    $.post(urlEngine, {name: txt})
@@ -42,9 +52,35 @@ var burmese_result = "";
 //    });
 //    return idata;
 //}
+function laosanscript(txt) {
 
+    var consonantThai = 'ก ข ค ฆ ง จ ฉ ช ฌ ญ ฏ ฐ ฑ ฒ ณ ต ถ ท ธ น ป ผ พ ภ ม ย ร ล ว ศ ษ ส ห ฬ อ'.split(' ');
+    var consonantLao = 'ກ ຂ ຄ ຃ ງ ຈ ຉ ຊ ຨ ຅ ຆ ຩ ຎ ຏ ຐ ຕ ຖ ທ ຘ ນ ປ ຜ ພ ຠ ມ ຍ ຣ ລ ວ ຤ ຦ ສ ຫ ຬ ອ'.split(' ');
+    var thaiSymbol = "๐ ๑ ๒ ๓ ๔ ๕ ๖ ๗ ๘ ๙ ' ฯ ๚".split(' ');
+    var laoSymbol = "໐ ໑ ໒ ໓ ໔ ໕ ໖ ໗ ໘ ໙ ' ฯ ฯฯ".split(' ');
+    var chandrabinduThai = "ัํ".split(' ');
+    var chandrabinduLao = "ັ".split(' ');
+    var anusvaraThai = "ํ".split(' ');
+    var anusvaraLao = "ໍ".split(' ');
+    var viramaThai = "ฺ".split(' ');
+    var viramaLao = "຺".split(' ');
+    var cancleMarkLao = "໌".split(' ');
+    var cancleMarkThai = "์".split(' ');
+    var vowelThai = "ะ า ิ ี ุ ู โ ไ เ ฤๅ ฦๅ ฤ ฦ".split(' ');
+    var vowelLao = "ະ າ ິ ີ ຸ ູ ໂ ໄ ເ ຣື ລື ຣຶ ລຶ".split(' ');
+
+    txt = txt.replaceArray(chandrabinduLao, chandrabinduThai);
+    txt = txt.replaceArray(cancleMarkLao, cancleMarkThai);
+    txt = txt.replaceArray(anusvaraLao, anusvaraThai);
+    txt = txt.replaceArray(viramaLao, viramaThai);
+    txt = txt.replaceArray(laoSymbol, thaiSymbol);
+    txt = txt.replaceArray(consonantLao, consonantThai);
+    txt = txt.replaceArray(vowelLao, vowelThai);
+
+    return thaisanscript(txt);
+}
 function thaisanscript(txt) {
-    var lineSplit = txt.split(/\r\n|\r|\n/);
+    var lineSplit = txt.trim().split(/\r\n|\r|\n/);
     var result = new Array();
     for (var i = 0; i < lineSplit.length; i++) {
         result.push(thaiToIAST(lineSplit[i]).trim());
@@ -52,6 +88,7 @@ function thaisanscript(txt) {
     return result.join("\n");
 }
 function thaiToIAST(txt) {
+    txt = convertAMUM(txt);
     txt = convertSymbol(txt);
     txt = convertChandrabindu(txt);
     txt = swapAnusvaraAndChandrabindu(txt);
@@ -63,6 +100,11 @@ function thaiToIAST(txt) {
     txt = convertAUVowel(txt);
     txt = convertLeaveFrontVowel(txt);
     txt = convertConsonant(txt);
+    return txt;
+}
+function  convertAMUM(txt) {
+    txt = txt.replace(/ำ/g, "ํา");
+    txt = txt.replace(/ึ/g, "ิํ");
     return txt;
 }
 function  convertSymbol(txt) {

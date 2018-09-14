@@ -11,33 +11,35 @@ class ThaiSanscriptRule {
     public $thaimapper;
     public $visarga;
     private $util;
-    
 
     function __construct() {
 
         $this->thaimapper = new ThaiSanscript();
-        
+
         $this->visarga = new ThaiVisargaConvert();
         $this->util = new Util();
     }
 
-    public function convert($romanize,$lang) {
+    public function convert($romanize, $lang, $destType = "thai") {
         $txt = $romanize;
         $txt = $this->util->convertAvagarahaRemove($txt);
         $txt = $this->util->convertRomanChandrabinduToSingle($txt);
         $txt = $this->util->convertNumber($txt);
         $txt = $this->util->convertRomanizeMixConsonant($txt);
-        $txt = $this->util->convertRomanizeMixVowel($txt,$lang);
+        $txt = $this->util->convertRomanizeMixVowel($txt, $lang);
         $txt = $this->util->convertRomanizeSingleConsonant($txt);
         $txt = $this->util->convertRomanizeSingleVowel($txt);
-        $txt = $this->convertAnusvaraAndChandrabindu($txt,$lang);
+        $txt = $this->convertAnusvaraAndChandrabindu($txt, $lang);
         $txt = $this->util->convertThaiVowelInFist($txt);
         $txt = $this->convertThaiVisarga($txt);
         $txt = $this->util->convertThaiVowelPrefix($txt);
         $txt = $this->util->convertThaiAAInFist($txt);
         $txt = $this->util->convertAE($txt);
         $txt = $this->util->convertAO($txt);
-
+        
+        if ($destType == "lao") {
+            $txt = $this->util->convertThaiToLao($txt);
+        }
         return $txt;
     }
 
@@ -57,7 +59,7 @@ class ThaiSanscriptRule {
         ThaiSanscriptRule::printTrackMode($txt, "SingleCon");
         $txt = $this->util->convertRomanizeSingleVowel($txt);
         ThaiSanscriptRule::printTrackMode($txt, "SingleVow");
-        $txt = $this->convertAnusvaraAndChandrabindu($txt,"sans");
+        $txt = $this->convertAnusvaraAndChandrabindu($txt, "sans");
         ThaiSanscriptRule::printTrackMode($txt, "AnusvaraAndChandrabindu");
         $txt = $this->util->convertThaiVowelInFist($txt);
         ThaiSanscriptRule::printTrackMode($txt, "ThaiVowelInFist");
@@ -77,7 +79,7 @@ class ThaiSanscriptRule {
         echo ("[" . $state . "] " . $romanize . " -> ");
     }
 
-    public function convertAnusvaraAndChandrabindu($thaiChar,$lang) {
+    public function convertAnusvaraAndChandrabindu($thaiChar, $lang) {
         $thaiChar = $thaiChar . " "; // after space 1  reserve  for condition
         $charList = $this->util->charList($thaiChar);
         $this->thaimapper->setLang($lang);

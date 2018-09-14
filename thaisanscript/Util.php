@@ -7,12 +7,47 @@ use ThaiSanskrit\ThaiSanscript;
 class Util {
 
     public $thaimapper;
+    public $consonantThai = 'ก ข ค ฆ ง จ ฉ ช ฌ ญ ฏ ฐ ฑ ฒ ณ ต ถ ท ธ น ป ผ พ ภ ม ย ร ล ว ศ ษ ส ห ฬ อ';
+    public $consonantLao = 'ກ ຂ ຄ ຃ ງ ຈ ຉ ຊ ຨ ຅ ຆ ຩ ຎ ຏ ຐ ຕ ຖ ທ ຘ ນ ປ ຜ ພ ຠ ມ ຍ ຣ ລ ວ ຤ ຦ ສ ຫ ຬ ອ';
+    public $thaiSymbol = "๐ ๑ ๒ ๓ ๔ ๕ ๖ ๗ ๘ ๙ ' ฯ ๚";
+    public $laoSymbol = "໐ ໑ ໒ ໓ ໔ ໕ ໖ ໗ ໘ ໙ ' ฯ ฯฯ";
+    public $chandrabinduThai = "ัํ";
+    public $chandrabinduLao = "ັ";
+    public $anusvaraThai = "ํ";
+    public $anusvaraLao = "ໍ";
+    public $viramaThai = "ฺ";
+    public $viramaLao = "຺";
+//    public $viramaLao =  "ຯຮ";
+
+    public $cancleMarkLao = "໌";
+    public $cancleMarkThai = "์";
+    public $vowelThai = "ะ า ิ ี ุ ู โ ไ เ ฤๅ ฦๅ ฤ ฦ";
+    public $vowelLao = "ະ າ ິ ີ ຸ ູ ໂ ໄ ເ ຣື ລື ຣຶ ລຶ";
 
     public function __construct($inForm = FALSE) {
         $this->thaimapper = new ThaiSanscript($inForm);
+        $this->consonantThai = preg_split("/[\s,]+/", $this->consonantThai);
+        $this->consonantLao = preg_split("/[\s,]+/", $this->consonantLao);
+        $this->laoSymbol = preg_split("/[\s,]+/", $this->laoSymbol);
+        $this->thaiSymbol = preg_split("/[\s,]+/", $this->thaiSymbol);
+
+        $this->vowelThai = preg_split("/[\s,]+/", $this->vowelThai);
+        $this->vowelLao = preg_split("/[\s,]+/", $this->vowelLao);
     }
 
     /*     * *******************    util part  ************************ */
+
+    public function convertThaiToLao($txt) {
+        $txt = str_replace($this->chandrabinduThai, $this->chandrabinduLao, $txt);
+        $txt = str_replace($this->cancleMarkThai, $this->cancleMarkLao, $txt);
+        $txt = str_replace($this->anusvaraThai, $this->anusvaraLao, $txt);
+        $txt = str_replace($this->viramaThai, $this->viramaLao, $txt);
+        $txt = str_replace($this->thaiSymbol, $this->laoSymbol, $txt);
+        $txt = str_replace($this->consonantThai, $this->consonantLao, $txt);
+        $txt = str_replace($this->vowelThai, $this->vowelLao, $txt);
+
+        return $txt;
+    }
 
     public function swapArray($swapCondition, $charList, $index) {
 
@@ -84,8 +119,8 @@ class Util {
         return str_replace($this->thaimapper->singleVowelRm, $this->thaimapper->singleVowelTh, $romanize);
     }
 
-    public function convertRomanizeMixVowel($romanize,$lang = "sans") {
-        if($lang == "pali"){
+    public function convertRomanizeMixVowel($romanize, $lang = "sans") {
+        if ($lang == "pali") {
             $this->thaimapper->setLang("pali");
         }
         return str_replace($this->thaimapper->mixVowelRm, $this->thaimapper->mixVowelTh, $romanize);
@@ -109,7 +144,7 @@ class Util {
             if ($check) {
 //432101234 แบบปรับรูป
 // FCR
-                $samyuta = ($charList[$i - 1] == "ร" || $charList[$i - 1] == "ล") ;
+                $samyuta = ($charList[$i - 1] == "ร" || $charList[$i - 1] == "ล");
                 $condition1 = $check &&
                         $this->isThaiConsonant($charList[$i - 2]) &&
 //                        $charList[$i - 1] == "ร" &&
@@ -150,7 +185,7 @@ class Util {
     }
 
     public function convertThaiVowelInFist($thaiChar) {
-        $thaiChar = " ".$thaiChar . " "; // before space 3 after space 6  reserve  for condition
+        $thaiChar = " " . $thaiChar . " "; // before space 3 after space 6  reserve  for condition
         $mapping = $this->thaimapper->thaiVowelInFist;
         $charList = $this->charList($thaiChar);
         $s1 = $this->thaimapper->thaiVowelInFist1;

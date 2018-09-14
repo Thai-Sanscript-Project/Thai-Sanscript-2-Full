@@ -13,11 +13,5 @@
         } else {
             $("#hint-thai").hide();
         }
-        
-        if (getSrcTypeval() === 'lao') {
-            $("#hint-lao").show();
-        } else {
-            $("#hint-lao").hide();
-        }
     });
 </script>

@@ -8,7 +8,7 @@
         <div class="row">
             <div class="bs-glyphicons">
                 <ul id="table-compare" class="bs-glyphicons-list">
-
+                                 
                 </ul>
             </div>
         </div>

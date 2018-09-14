@@ -31,24 +31,34 @@
         var txt = getSrcTxtval();
         var srcType = getSrcTypeval();
         var destType = getDestTypeVal();
-
+        
+        
         if (srcType === 'thai') {
             /*thaisanscript.js*/
             txt = thaisanscript(txt);
             srcType = 'iast';
-        } else if (srcType === 'burmese') {
+        } 
+        else if (srcType === 'lao') {
+        
+            txt = laosanscript(txt);
+            srcType = 'iast';
+        } 
+        else if (srcType === 'burmese') {
 
 //            txt = burmesesanscript(txt, urlEngine);
 //            alert(txt);
             srcType = 'iast';
         }
+
         if (srcType === 'iast') {
             txt = txt.toLowerCase();
         }
-        console.log("getSrcTypeText: " + srcType);
-        console.log("getDestTypeText: " + destType);
-        output = Sanscript.t(txt, srcType, destType);
 
+        output = Sanscript.t(txt, srcType, destType);
+        console.log("txt : " + txt);
+        console.log("srcType : " + srcType);
+        console.log("destType : " + destType);
+        console.log("output : " + output);
         return output;
     }
 
@@ -56,11 +66,12 @@
         var output = "";
         var txt = getSrcTxtval();
         var srcType = getSrcTypeval();
-
-
         if (srcType === 'thai') {
             /*thaisanscript.js*/
             output = thaisanscript(txt);
+        } else if (srcType === 'lao') {
+            /*thaisanscript.js*/
+            output = laosanscript(txt);
         } else if (srcType === 'burmese') {
 
 //            txt = burmesesanscript(txt, urlEngine);
@@ -70,6 +81,8 @@
             output[0] = burmesesanscript(txt, urlEngine);
             output[1] = Sanscript.t(output[0], 'iast', destType);
             return output;
+        } else if (destType === 'lao') {
+            output = Sanscript.t(txt, 'thai', 'iast');
         } else {
             output = Sanscript.t(txt, srcType, 'iast');
         }

@@ -15,7 +15,7 @@
         word-wrap: break-word;
         font-size: 19px;
         font-weight: bold;
-       
+
         -webkit-font-smoothing: antialiased;
         color: #003399;
     }

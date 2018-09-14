@@ -35,12 +35,12 @@ class ThaiSanscriptAPI {
         return $list;
     }
 
-    public function convertThaiInform($txt,$lang="sans") {
-        return $this->thaiInformRule->convert($txt,$lang);
+    public function convertThaiInform($txt, $lang = "sans", $destType = "thai") {
+        return $this->thaiInformRule->convert($txt, $lang, $destType);
     }
 
-    public function convertThai($txt,$lang="sans") {
-        return $this->thaiRule->convert($txt,$lang);
+    public function convertThai($txt, $lang = "sans", $destType = "thai") {
+        return $this->thaiRule->convert($txt, $lang, $destType);
     }
 
 //    public function jsonOutput($txt) {
@@ -55,29 +55,30 @@ class ThaiSanscriptAPI {
 //        } 
 //        return json_encode($output);
 //    }
-    public function jsonOutput($txt,$lang) {
+    public function jsonOutput($txt, $lang, $destType) {
         $txt = $this->prepareTxt($txt);
-        $output = $this->convertLineTxt($txt,$lang);
+        $output = $this->convertLineTxt($txt, $lang, $destType);
         return json_encode($output);
     }
 
-    public function convertAllTxt($txt) {
+//    public function convertAllTxt($txt) {
+//
+//        $output = array();
+//        $output[0] = $this->line_split($this->convertThaiInform($txt));
+//        $output[1] = $this->line_split($this->convertThai($txt));
+//        return $output;
+//    }
 
-        $output = array();
-        $output[0] = $this->line_split($this->convertThaiInform($txt));
-        $output[1] = $this->line_split($this->convertThai($txt));
-        return $output;
-    }
-
-    public function convertLineTxt($txt,$lang) {
+    public function convertLineTxt($txt, $lang, $destType) {
 
         $output = array();
         $output[0] = array();
         $output[1] = array();
         $txtPool = preg_split('/\r\n|\r|\n/', $txt);
         foreach ($txtPool as $i => $line) {
-            $output[0][$i] = explode($this->spaceDilimiter, $this->convertThaiInform($line,$lang));
-            $output[1][$i] = explode($this->spaceDilimiter, $this->convertThai($line,$lang));
+            $output[0][$i] = explode($this->spaceDilimiter, $this->convertThaiInform($line, $lang));
+            $output[1][$i] = explode($this->spaceDilimiter, $this->convertThai($line, $lang, $destType));
+            $output[2][$i] = explode($this->spaceDilimiter, $this->convertThaiInform($line, $lang, $destType));
         }
         return $output;
     }
@@ -100,7 +101,7 @@ class ThaiSanscriptAPI {
 
     public function transliterationTracking($romanize, $mode = 1) {
         if ($mode == 1) {
-            $real = $this->thaiRule->convert($romanize,'sans');
+            $real = $this->thaiRule->convert($romanize, 'sans');
             $track = $this->thaiRule->convertTrackMode($romanize);
         } else {
             $real = $this->thaiInformRule->convert($romanize);
