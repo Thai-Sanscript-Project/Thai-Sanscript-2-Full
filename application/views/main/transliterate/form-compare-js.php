@@ -192,14 +192,21 @@
 
     //-----------------------------------
     function syllableSplit(line) {
-        return line.split('@');
-        ;
+        line = line.trim().replace(/\x20+/g, '@');
+        return line.trim().split('@');
+        
     }
     function lineSplit(txt) {
-        txt = txt.replace(/\x20+/g, '@');
+        txt = txt.trim().replace('\t', '');
+        //
+
+        console.log(txt);
         var lineSplit = txt.split(/\r\n|\r|\n/);
-        return  lineSplit.map(syllableSplit);
-        //console.log(lineSplit);
+        var returnVar = lineSplit.map(syllableSplit);
+        console.log("*********************");
+        console.log(returnVar);
+        console.log("*********************");
+        return returnVar;
     }
 
 </script>

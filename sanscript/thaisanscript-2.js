@@ -105,6 +105,13 @@ function thaiToIAST(txt) {
 function  convertAMUM(txt) {
     txt = txt.replace(/ำ/g, "ํา");
     txt = txt.replace(/ึ/g, "ิํ");
+    txt = txt.replace(//g, "ํ");
+    txt = txt.replace(/ ํ/g, "ํ");
+       
+    
+    txt = txt.replace(/ ํ/g, "ํ");
+    txt = txt.replace(//g, "ฐ");
+    txt = txt.replace(//g, "ญ");
     return txt;
 }
 function  convertSymbol(txt) {
