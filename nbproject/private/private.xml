@@ -2,23 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/AppServ/www/sans/application/libraries/Thaisans_adapter.php</file>
-            <file>file:/D:/AppServ/www/sans/application/views/main/transliterate/form.php</file>
-            <file>file:/D:/AppServ/www/sans/application/views/design/component/common/import_css.php</file>
-            <file>file:/D:/AppServ/www/sans/thaisanscript/ThaiSanscript.php</file>
-            <file>file:/D:/AppServ/www/sans/sanscript/lao.js</file>
-            <file>file:/D:/AppServ/www/sans/sanscript/sanscript.js</file>
-            <file>file:/D:/AppServ/www/sans/application/views/main/transliterate/form-compare-js.php</file>
-            <file>file:/D:/AppServ/www/sans/application/views/main/transliterate/js-main.php</file>
-            <file>file:/D:/AppServ/www/sans/thaisanscript/ThaiSanscriptInformRule.php</file>
-            <file>file:/D:/AppServ/www/sans/thaisanscript/Util.php</file>
-            <file>file:/D:/AppServ/www/sans/application/views/main/transliterate/form-js.php</file>
-            <file>file:/D:/AppServ/www/sans/application/views/main/transliterate/modal-agreement.php</file>
-            <file>file:/D:/AppServ/www/sans/thaisanscript/ThaiSanscriptAPI.php</file>
-            <file>file:/D:/AppServ/www/sans/application/controllers/Transliteration.php</file>
-            <file>file:/D:/AppServ/www/sans/sanscript/thaisanscript.js</file>
-            <file>file:/D:/AppServ/www/sans/thaisanscript/ThaiSanscriptRule.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
