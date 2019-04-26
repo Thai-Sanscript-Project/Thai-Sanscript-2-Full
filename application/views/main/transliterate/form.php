@@ -1,12 +1,12 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <style>
     @font-face {
-        font-family: lanexang_pali;
-        src: url(<?php echo_css("Lanexang_Pali.ttf") ?>);
+        font-family: Lanexang-Mon2;
+        src: url(<?php echo_css("Lanexang-Mon2.otf") ?>);
     }
 
     .lao{
-        font-family: lanexang_pali;
+        font-family: Lanexang-Mon2;
     }
 
     .glyphicon-class-dest {
@@ -24,10 +24,10 @@
 <section id="contact-info" style="background: #f2f2f2;">
     <div id="translite-form" class="container">
         <div class="center">        
-            <h2>เลือกชนิดตัวอักษรที่จะทำการปริวรรต</h2>
+            <h2><?php echo lang("Select the character"); ?></h2>
             <p class="lead">
-                เมื่อคุณเลือกชนิดตัวอักษรแล้ว คุณสามารถดูตารางเปรียบเทียบการปริวรรตอักษรด้านล่าง [<a href="#contact-page">ดูตารางเปรียบเทียบอักษร</a>]<br>
-                เลือกตัวอักษรต้นฉบับ กรอกอักษรที่เป็นชนิดตัวอักษรที่เลือกไว้  แล้วเลือกตัวอักษรเปรียบเทียบอื่นๆ  จากนั้น กดปุ่ม "ปริวรรต เป็น ไทย-สันสกฤต" เพื่อดูผลลัพธ์
+               <?php echo lang("When you have selected"); ?>   [<a href="#contact-page"><?php echo lang("View the comparative table"); ?> </a>]<br>
+               <?php echo lang("Enter the character of the selected"); ?> 
             </p>
         </div> 
         <div class="row contact-wrap"> 
@@ -35,37 +35,37 @@
             <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="">
                 <div class="col-sm-4 col-sm-offset-1">
                     <div class="form-group">
-                        <label>ตัวอักษรต้นฉบับ</label>   
-                        <a id="hint-thai" href="#" data-toggle="modal" data-target="#agreement"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>ข้อตกลงการปริวรรต</a>
+                        <label><?php echo lang("Original Script"); ?> </label>   
+                        <a id="hint-thai" href="#" data-toggle="modal" data-target="#agreement"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span><?php echo lang("Agreement of using"); ?></a>
                         <a id="hint-lao" href="#" data-toggle="modal" data-target="#agreement-lao" style="display: none"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>ติดตั้งฟอนต์ลาว</a>                  
                         <select name="src-type"  id="src-type" class="form-control select-type translite" style="overflow: scroll;" >
-                            <optgroup label="อุษาคเนย์">
-                                <option value="thai">ไทย-คงรูป(แบบแผน)</option>
-                                <option value="lao" class="lao">ลาว (ກ)</option>
-                                <option value="burmese">พม่า (က)</option>                                
+                            <optgroup label="<?php echo lang("Southeast Asia"); ?>">
+                                <option value="thai"><?php echo lang("Thai Traditional Form"); ?></option>
+                                <option value="lao" ><?php echo lang("Lao"); ?> <span class="lao">(ກ)</span></option>
+                            <option value="burmese"><?php echo lang("Burmese"); ?> (က)</option>                                
                             </optgroup>
                             <!--<optgroup label="ทดสอบ">-->
                             <!--<option value="brahmi">พราหมี (𑀅)</option>-->                           
                             <!--</optgroup>-->
 
-                            <optgroup label="อินเดีย">                             
-                                <option value="devanagari" selected="selected" >เทวนาครี (अ)</option>
-                                <option value="bengali">เบงกาลี (অ)</option>
-                                <option value="gurmukhi">คุรมุขี (ਅ)</option>
-                                <option value="gujarati">คุชราตี (અ)</option>
-                                <option value="oriya">โอริยา (ଅ)</option>
-                                <option value="tamil">ทมิฬ (அ)</option>
-                                <option value="telugu">เตลูกู (అ)</option>
-                                <option value="kannada">กันนาดา (ಅ)</option>
-                                <option value="malayalam">มาลายัม (അ)</option>
+                            <optgroup label="<?php echo lang("Indian Scripts"); ?>">                             
+                                <option value="devanagari" selected="selected" > <?php echo lang("Devanagari"); ?> (अ)</option>
+                                <option value="bengali"><?php echo lang("Bengali"); ?>  (অ)</option>
+                                <option value="gurmukhi"><?php echo lang("Gurmukhi"); ?> (ਅ)</option>
+                                <option value="gujarati"><?php echo lang("Gujarati"); ?> (અ)</option>
+                                <option value="oriya"><?php echo lang("Oriya"); ?> (ଅ)</option>
+                                <option value="tamil"><?php echo lang("Tamil"); ?> (அ)</option>
+                                <option value="telugu"><?php echo lang("Telugu"); ?> (అ)</option>
+                                <option value="kannada"><?php echo lang("Kannada"); ?> (ಅ)</option>
+                                <option value="malayalam"><?php echo lang("Malayalam"); ?> (അ)</option>
                             </optgroup>
-                            <optgroup label="โรมัน">
-                                <option value="iast" >โรมัน IAST</option>
-                                <option value="kolkata">โรมัน Kolkata</option>
-                                <option value="itrans">โรมัน ITRANS</option>
-                                <option value="hk">โรมัน Harvard-Kyoto</option>
-                                <option value="slp1">โรมัน SLP</option>
-                                <option value="iasttest">โรมัน ทดสอบ</option>
+                            <optgroup label="<?php echo lang("Romanize"); ?>">
+                                <option value="iast" ><?php echo lang("Roman"); ?> IAST</option>
+                                <option value="kolkata"><?php echo lang("Roman"); ?> Kolkata</option>
+                                <option value="itrans"><?php echo lang("Roman"); ?> ITRANS</option>
+                                <option value="hk"><?php echo lang("Roman"); ?> Harvard-Kyoto</option>
+                                <option value="slp1"><?php echo lang("Roman"); ?> SLP</option>
+                                <!--<option value="iasttest">โรมัน ทดสอบ</option>-->
                             </optgroup>                           
                         </select>
                     </div>
@@ -82,28 +82,28 @@
                                                             <option value="brahmi">พราหมี (𑀅)</option> 
                                                              <option value="thai"  >ไทย-คงรูป(แบบแผน)</option>    
                                                         </optgroup>-->
-                            <optgroup label="อุษาคเนย์">                               
-                                <option value="lao" class="lao">ลาว (ກ)</option>                                       
+                            <optgroup label="<?php echo lang("Southeast Asia"); ?>">                               
+                                <option value="lao" ><?php echo lang("Lao"); ?> <span class="lao">(ກ)</span></option>                                       
                             </optgroup>
-                            <optgroup label="อินเดีย">
-                                <option value="devanagari">เทวนาครี (अ)</option>
-                                <option value="bengali">เบงกาลี (অ)</option>
-                                <option value="gurmukhi">คุรมุขี (ਅ)</option>
-                                <option value="gujarati">คุชราตี (અ)</option>
-                                <option value="oriya">โอริยา (ଅ)</option>
-                                <option value="tamil">ทมิฬ (அ)</option>
-                                <option value="telugu">เตลูกู (అ)</option>
-                                <option value="kannada">กันนาดา (ಅ)</option>
-                                <option value="malayalam">มาลายัม (അ)</option>
+                            <optgroup label="<?php echo lang("Indian Scripts"); ?>">                             
+                                <option value="devanagari" selected="selected" > <?php echo lang("Devanagari"); ?> (अ)</option>
+                                <option value="bengali"><?php echo lang("Bengali"); ?>  (অ)</option>
+                                <option value="gurmukhi"><?php echo lang("Gurmukhi"); ?> (ਅ)</option>
+                                <option value="gujarati"><?php echo lang("Gujarati"); ?> (અ)</option>
+                                <option value="oriya"><?php echo lang("Oriya"); ?> (ଅ)</option>
+                                <option value="tamil"><?php echo lang("Tamil"); ?> (அ)</option>
+                                <option value="telugu"><?php echo lang("Telugu"); ?> (అ)</option>
+                                <option value="kannada"><?php echo lang("Kannada"); ?> (ಅ)</option>
+                                <option value="malayalam"><?php echo lang("Malayalam"); ?> (അ)</option>
                             </optgroup>
-                            <optgroup label="โรมัน">
-                                <option value="iast" selected="selected" >โรมัน IAST</option>
-                                <option value="kolkata">โรมัน Kolkata</option>
-                                <option value="itrans">โรมัน ITRANS</option>
-                                <option value="hk">โรมัน Harvard-Kyoto</option>
-                                <option value="slp1">โรมัน SLP</option>
-                                <option value="iasttest">โรมัน ทดสอบ</option>
-                            </optgroup> 
+                            <optgroup label="<?php echo lang("Romanize"); ?>">
+                                <option value="iast" ><?php echo lang("Roman"); ?> IAST</option>
+                                <option value="kolkata"><?php echo lang("Roman"); ?> Kolkata</option>
+                                <option value="itrans"><?php echo lang("Roman"); ?> ITRANS</option>
+                                <option value="hk"><?php echo lang("Roman"); ?> Harvard-Kyoto</option>
+                                <option value="slp1"><?php echo lang("Roman"); ?> SLP</option>
+                                <!--<option value="iasttest">โรมัน ทดสอบ</option>-->
+                            </optgroup>                           
 
                         </select>
                     </div>
@@ -117,8 +117,8 @@
                     <div class="form-group">
                         <label>ข้อความภาษา</label>
                         <select class="form-control select-type translite" name="lang"  id="lang" >
-                            <option value="sans" selected="selected" >สันสกฤต</option>
-                            <option value="pali">บาฬี</option>
+                            <option value="sans" selected="selected" ><?php echo lang("Sanskrit"); ?></option>
+                            <option value="pali"><?php echo lang("Pali"); ?></option>
                         </select>
                     </div>
                 </div>

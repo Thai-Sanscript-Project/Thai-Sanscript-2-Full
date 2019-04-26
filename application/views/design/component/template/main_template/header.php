@@ -13,7 +13,7 @@ $menu[50] = "";
 //$menu[60] = "";
 //$menu[70] = "";
 $menu[$active_menu] = "active";
-$mod =  $active_menu % 10;
+$mod = $active_menu % 10;
 $mainmenu = $active_menu - $mod;
 $menu[$mainmenu] = "active";
 ?>
@@ -31,25 +31,28 @@ $menu[$mainmenu] = "active";
             </div>
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li class="<?php echo $menu[10] ?>"><a href="<?php echo site_url() ?>">หน้าหลัก</a></li>
-                    <li class="<?php echo $menu[20] ?>"><a href="<?php echo site_url() ?>/main/transliterate">ปริวรรต</a></li>
-                    <li class="<?php echo $menu[30] ?>"><a href="<?php echo site_url() ?>/main/example">ตัวอย่างการปริวรรต</a></li>
-                    <li class="<?php echo $menu[40] ?>"><a href="http://blog.thai-sanscript.com/">บทความ</a></li>
-					<li class="<?php echo $menu[50] ?>"><a href="<?php echo base_url() ?>/dict">พจนานุกรมสันสกฤต-ไทย</a></li>
-                   <!--<?php /**
-                    <li class="<?php echo $menu[40] ?>"><a href="<?php echo site_url() ?>/demo/theme/portfolio">Portfolio</a></li>
-                    <li class="dropdown <?php echo $menu[50] ?>">
-                        <a href="<?php echo site_url() ?>/demo/demo/#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li class="<?php echo $menu[51] ?>"><a href="<?php echo site_url() ?>/demo/theme/blog_item">Blog Single</a></li>
-                            <li class="<?php echo $menu[52] ?>"><a href="<?php echo site_url() ?>/demo/theme/pricing">Pricing</a></li>
-                            <li class="<?php echo $menu[53] ?>"><a href="<?php echo site_url() ?>/demo/theme/error_404">404</a></li>
-                            <li class="<?php echo $menu[54] ?>"><a href="<?php echo site_url() ?>/demo/theme/shortcodes">Shortcodes</a></li>
-                        </ul>
-                    </li>
-                    <li class="<?php echo $menu[60] ?>"><a href="<?php echo site_url() ?>/demo/theme/blog">Blog</a></li> 
-                    <li class="<?php echo $menu[70] ?>"><a href="<?php echo site_url() ?>/demo/theme/contact_us">Contact</a></li>                        
-                   **/?>-->
+                    <li class="<?php echo $menu[10] ?>"><a href="<?php echo site_url() ?>"><?php echo lang('Home') ?></a></li>
+                    <li class="<?php echo $menu[20] ?>"><a href="<?php echo site_url() ?>/main/transliterate"><?php echo lang('Transliteration') ?></a></li>
+                    <li class="<?php echo $menu[30] ?>"><a href="<?php echo site_url() ?>/main/example"><?php echo lang('Example of Transliteration') ?></a></li>
+                    <li class="<?php echo $menu[40] ?>"><a href="http://blog.thai-sanscript.com/"><?php echo lang('Article') ?></a></li>
+                    <li class="<?php echo $menu[50] ?>  btn-outline-info">
+                        <a href="<?php echo site_url() ?>/language/th?url=<?php echo current_url() ?>">ภาษาไทย</a> 
+                        | 
+                        <a href="<?php echo site_url() ?>/language/en?url=<?php echo current_url() ?>">English</a></li>
+                    <!--<?php /**
+  <li class="<?php echo $menu[40] ?>"><a href="<?php echo site_url() ?>/demo/theme/portfolio">Portfolio</a></li>
+  <li class="dropdown <?php echo $menu[50] ?>">
+  <a href="<?php echo site_url() ?>/demo/demo/#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+  <ul class="dropdown-menu">
+  <li class="<?php echo $menu[51] ?>"><a href="<?php echo site_url() ?>/demo/theme/blog_item">Blog Single</a></li>
+  <li class="<?php echo $menu[52] ?>"><a href="<?php echo site_url() ?>/demo/theme/pricing">Pricing</a></li>
+  <li class="<?php echo $menu[53] ?>"><a href="<?php echo site_url() ?>/demo/theme/error_404">404</a></li>
+  <li class="<?php echo $menu[54] ?>"><a href="<?php echo site_url() ?>/demo/theme/shortcodes">Shortcodes</a></li>
+  </ul>
+  </li>
+  <li class="<?php echo $menu[60] ?>"><a href="<?php echo site_url() ?>/demo/theme/blog">Blog</a></li>
+  <li class="<?php echo $menu[70] ?>"><a href="<?php echo site_url() ?>/demo/theme/contact_us">Contact</a></li>
+ * */ ?>-->
                 </ul>
             </div>
         </div><!--/.container-->

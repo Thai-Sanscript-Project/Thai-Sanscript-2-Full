@@ -8,16 +8,18 @@
 //        $("#dest-txt").val(transliteration());
 //    });
     $("#src-type").bind('change', function () {
-        if (getSrcTypeval() === 'thai') {
-            $("#hint-thai").show();
-        } else {
-            $("#hint-thai").hide();
-        }
+    if (getSrcTypeval() === 'thai') {
+    $("#hint-thai").show();
+    } else {
+    $("#hint-thai").hide();
+    }
 
-        if (getSrcTypeval() === 'lao' || getDestTypeVal() === 'lao') {
-            $("#hint-lao").show();
-        } else {
-            $("#hint-lao").hide();
-        }
+    if (getSrcTypeval() === 'lao' || getDestTypeVal() === 'lao') {
+    $("#hint-lao").show();
+    $("#src-txt").addClass("lao");
+    } else {
+    $("#hint-lao").hide();
+    $("#src-txt").removeClass("lao");
+    }
     });
 </script>

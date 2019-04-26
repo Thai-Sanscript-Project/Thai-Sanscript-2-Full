@@ -13,7 +13,7 @@ class Template {
     public $css_embed = array();
     public $page_section = array();
     public $active_menu = "";
-    protected $CI;
+    public $CI;
 
     public function __construct() {
         $this->CI = & get_instance();
@@ -48,6 +48,14 @@ class Template {
         $data['js_embed'] = $this->js_embed;
         $data['css_embed'] = $this->css_embed;
         $data['active_menu'] = $this->active_menu;
+
+
+//        if (($controller->session->userdata("LANGUAGE")) !== null ) {
+//            $this->session->set_userdata("LANGUAGE", $this->auto_lang());
+//            $this->set_lang($controller);
+//        }
+
+        $this->set_lang($controller);
         $controller->parser->parse($template_view_path, $data);
     }
 
@@ -85,14 +93,25 @@ class Template {
 
     public function set_lang(CI_Controller $controller) {
 
-        $language = trim($controller->session->userdata("LANGUAGE"));
+
+
+        if (!empty($_GET['lang'])) {
+            $controller->session->set_userdata("LANGUAGE", $_GET['lang']);
+        }
+
+        $language = $controller->session->userdata("LANGUAGE");
+
+        print_r($controller->session);
+            print_r($_SESSION);
+
         if ($language == "th") {
-            $controller->lang->load('keyword', 'thai');
+            $controller->lang->load('sans', 'thai');
             $controller->session->set_userdata("LANGUAGE", "th");
         } elseif ($language == "en") {
-            $controller->lang->load('keyword', 'english');
+            $controller->lang->load('sans', 'english');
+            $controller->session->set_userdata("LANGUAGE", "en");
         } else {
-            $controller->lang->load('keyword');
+            $controller->lang->load('sans');
         }
     }
 
@@ -102,6 +121,41 @@ class Template {
         } else {
             redirect('admin?error=1', 'refresh');
         }
+    }
+
+    public function auto_lang() {
+        $ip = $this->get_client_ip();
+        $lang = "en";
+        if ($ip) {
+            $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+
+            if (isset($details->country)) {
+                if (strtolower($details->country) === "th") {
+                    $lang = "en";
+                }
+            }
+        }
+
+        return $lang;
+    }
+
+    public function get_client_ip() {
+        $ipaddress = '';
+        if (isset($_SERVER['HTTP_CLIENT_IP']))
+            $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+        else if (isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+            $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        else if (isset($_SERVER['HTTP_X_FORWARDED']))
+            $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+        else if (isset($_SERVER['HTTP_FORWARDED_FOR']))
+            $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+        else if (isset($_SERVER['HTTP_FORWARDED']))
+            $ipaddress = $_SERVER['HTTP_FORWARDED'];
+        else if (isset($_SERVER['REMOTE_ADDR']))
+            $ipaddress = $_SERVER['REMOTE_ADDR'];
+        else
+            $ipaddress = '';
+        return $ipaddress;
     }
 
 }

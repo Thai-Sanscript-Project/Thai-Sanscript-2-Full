@@ -79,7 +79,7 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-$config['language']	= 'english';
+$config['language']	= "thai";
 
 /*
 |--------------------------------------------------------------------------
@@ -373,7 +373,8 @@ $config['encryption_key'] = '';
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] = '/home/thaisans/domains/thai-sanscript.com/public_html/application/session';
+//$config['sess_save_path'] = '/home/thaisans/domains/thai-sanscript.com/public_html/application/session';
+$config['sess_save_path'] = 'C:\home\thaisans\domains\thai-sanscript.com\public_html\application\session';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
