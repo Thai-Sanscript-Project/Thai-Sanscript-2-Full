@@ -6,11 +6,15 @@ if (!function_exists('get_line')) {
 
     function get_line($line) {
         $CI = & get_instance();
-        return $CI->lang->line($line);       
+        return $CI->lang->line($line);
     }
 
     function echo_line($line) {
-        echo get_line($line);
+        if (get_line($line)) {
+            echo get_line($line);
+        }else{
+            echo $line;
+        }
     }
 
 }

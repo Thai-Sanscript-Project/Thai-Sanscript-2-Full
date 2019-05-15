@@ -31,10 +31,10 @@ $menu[$mainmenu] = "active";
             </div>
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li class="<?php echo $menu[10] ?>"><a href="<?php echo site_url() ?>"><?php echo lang('Home') ?></a></li>
-                    <li class="<?php echo $menu[20] ?>"><a href="<?php echo site_url() ?>/main/transliterate"><?php echo lang('Transliteration') ?></a></li>
-                    <li class="<?php echo $menu[30] ?>"><a href="<?php echo site_url() ?>/main/example"><?php echo lang('Example of Transliteration') ?></a></li>
-                    <li class="<?php echo $menu[40] ?>"><a href="http://blog.thai-sanscript.com/"><?php echo lang('Article') ?></a></li>
+                    <li class="<?php echo $menu[10] ?>"><a href="<?php echo site_url() ?>"><?php echo_line('Home') ?></a></li>
+                    <li class="<?php echo $menu[20] ?>"><a href="<?php echo site_url() ?>/main/transliterate"><?php echo_line('Transliteration') ?></a></li>
+                    <li class="<?php echo $menu[30] ?>"><a href="<?php echo site_url() ?>/main/example"><?php echo_line('Example of Transliteration') ?></a></li>
+                    <li class="<?php echo $menu[40] ?>"><a href="http://blog.thai-sanscript.com/"><?php echo_line('Article') ?></a></li>
                     <li class="<?php echo $menu[50] ?>  btn-outline-info">
                         <a href="<?php echo site_url() ?>/language/th?url=<?php echo current_url() ?>">ภาษาไทย</a> 
                         | 
