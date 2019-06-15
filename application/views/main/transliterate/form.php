@@ -1,12 +1,12 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <style>
     @font-face {
-        font-family: Lanexang-Mon2;
-        src: url(<?php echo_css("Lanexang-Mon2.otf") ?>);
+        font-family: Lanexang_Pali2;
+        src: url(<?php echo_css("Lanexang_Pali2.otf") ?>);
     }
 
     .lao{
-        font-family: Lanexang-Mon2;
+        font-family: Lanexang_Pali2;
     }
 
     .glyphicon-class-dest {

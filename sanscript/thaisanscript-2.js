@@ -55,7 +55,9 @@ var burmese_result = "";
 function laosanscript(txt) {
 
     var consonantThai = 'ก ข ค ฆ ง จ ฉ ช ฌ ญ ฏ ฐ ฑ ฒ ณ ต ถ ท ธ น ป ผ พ ภ ม ย ร ล ว ศ ษ ส ห ฬ อ'.split(' ');
-    var consonantLao = 'ກ ຂ ຄ ຃ ງ ຈ ຉ ຊ ຨ ຅ ຆ ຩ ຎ ຏ ຐ ຕ ຖ ທ ຘ ນ ປ ຜ ພ ຠ ມ ຍ ຣ ລ ວ ຤ ຦ ສ ຫ ຬ ອ'.split(' ');
+    //var consonantLao = 'ກ ຂ ຄ ຆ ງ ຈ ຉ ຊ ຨ ຅ ຆ ຩ ຎ ຏ ຐ ຕ ຖ ທ ຘ ນ ປ ຜ ພ ຠ ມ ຍ ຣ ລ ວ ຤ ຦ ສ ຫ ຬ ອ'.split(' ');
+	
+	var consonantLao = 'ກ ຂ ຄ ຆ ງ ຈ ຉ ຊ ຌ ຎ ຏ ຐ ຑ ຒ ຓ ຕ ຖ ທ ຘ ນ ປ ຜ ພ ຠ ມ ຍ ຣ ລ ວ ຨ ຩ ສ ຫ ຬ ອ'.split(' ');
     var thaiSymbol = "๐ ๑ ๒ ๓ ๔ ๕ ๖ ๗ ๘ ๙ ' ฯ ๚".split(' ');
     var laoSymbol = "໐ ໑ ໒ ໓ ໔ ໕ ໖ ໗ ໘ ໙ ' ฯ ฯฯ".split(' ');
     var chandrabinduThai = "ัํ".split(' ');
@@ -67,7 +69,7 @@ function laosanscript(txt) {
     var cancleMarkLao = "໌".split(' ');
     var cancleMarkThai = "์".split(' ');
     var vowelThai = "ะ า ิ ี ุ ู โ ไ เ ฤๅ ฦๅ ฤ ฦ".split(' ');
-    var vowelLao = "ະ າ ິ ີ ຸ ູ ໂ ໄ ເ ຣື ລື ຣຶ ລຶ".split(' ');
+    var vowelLao = "ະ າ ິ ີ ຸ ູ ໂ ໄ ເ ຤າ ຦າ ຤ ຦".split(' ');
 
     txt = txt.replaceArray(chandrabinduLao, chandrabinduThai);
     txt = txt.replaceArray(cancleMarkLao, cancleMarkThai);

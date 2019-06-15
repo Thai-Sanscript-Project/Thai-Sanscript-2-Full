@@ -8,7 +8,7 @@ class Util {
 
     public $thaimapper;
     public $consonantThai = 'ก ข ค ฆ ง จ ฉ ช ฌ ญ ฏ ฐ ฑ ฒ ณ ต ถ ท ธ น ป ผ พ ภ ม ย ร ล ว ศ ษ ส ห ฬ อ';
-    public $consonantLao = 'ກ ຂ ຄ ຃ ງ ຈ ຉ ຊ ຨ ຅ ຆ ຩ ຎ ຏ ຐ ຕ ຖ ທ ຘ ນ ປ ຜ ພ ຠ ມ ຍ ຣ ລ ວ ຤ ຦ ສ ຫ ຬ ອ';
+    public $consonantLao = 'ກ ຂ ຄ ຆ ງ ຈ ຉ ຊ ຌ ຎ ຏ ຐ ຑ ຒ ຓ ຕ ຖ ທ ຘ ນ ປ ຜ ພ ຠ ມ ຍ ຣ ລ ວ ຨ ຩ ສ ຫ ຬ ອ';
     public $thaiSymbol = "๐ ๑ ๒ ๓ ๔ ๕ ๖ ๗ ๘ ๙ ' ฯ ๚";
     public $laoSymbol = "໐ ໑ ໒ ໓ ໔ ໕ ໖ ໗ ໘ ໙ ' ฯ ฯฯ";
     public $chandrabinduThai = "ัํ";
@@ -22,7 +22,7 @@ class Util {
     public $cancleMarkLao = "໌";
     public $cancleMarkThai = "์";
     public $vowelThai = "ั ะ า ิ ี ุ ู โ ไ เ ฤๅ ฦๅ ฤ ฦ";
-    public $vowelLao = "ັ ະ າ ິ ີ ຸ ູ ໂ ໄ ເ ຣື ລື ຣຶ ລຶ";
+    public $vowelLao = "ັ ະ າ ິ ີ ຸ ູ ໂ ໄ ເ ຤າ ຦າ ຤ ຦";
 
     public function __construct($inForm = FALSE) {
         $this->thaimapper = new ThaiSanscript($inForm);

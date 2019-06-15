@@ -22,7 +22,9 @@
             if (p.hasOwnProperty(key)) {
                 var src_class = "class='glyphicon src " + srctype + "'";
                 var dest_class = "class='glyphicon-class-dest dest " + desttype + "'";
-                txt += "<li><span " + src_class + ">" + key + "</span><span " + dest_class + ">" + p[key] + "</span></li>";
+                txt += "<li><span " + src_class + ">" + key  + "</span><span " + dest_class + ">" + p[key]+"<br>"+ 
+                       // toUnicode(p[key]) +
+                        "</span></li>";
             }
         }
         $('#table-compare').html(txt);
@@ -32,6 +34,20 @@
         $('#txt-form').html(getSrcTypeText());
         $('#txt-to').html(getDestTypeText());
     }
+
+    function toUnicode(theString) {
+        var unicodeString = '';
+        for (var i = 0; i < theString.length; i++) {
+            var theUnicode = theString.charCodeAt(i).toString(16).toUpperCase();
+            while (theUnicode.length < 4) {
+                theUnicode = '0' + theUnicode;
+            }
+            theUnicode = '\\u' + theUnicode;
+            unicodeString += theUnicode;
+        }
+        return unicodeString;
+    }
+
 
 
 </script>
