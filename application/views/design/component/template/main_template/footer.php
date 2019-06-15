@@ -9,11 +9,11 @@
                     </div>
                     <div class="media-body">
                         <h2>
-                           <?php echo lang('The work') ?> 
+                            <?php echo_line("Thai - Sanscritp is work of King Mongkut's University of Technology Thonburi by Thanakrit Promsiri.") ?>                           
                         </h2>
                         <p>
-                            <?php echo lang('An open source software') ?>
-                            
+                           เป็นซอฟต์แวร์โอเพนซอร์ซ รหัสโปรแกรม อนุญาตให้ใช้ได้ตาม สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า-อนุญาตแบบเดียวกัน 4.0 International อยู่บนพื้นฐานของงานที่ learnsanskrit.org/tools/sanscript & virtualvinodh.com/aksharamukha
+
 
                         </p>
                     </div>
@@ -34,7 +34,7 @@
                     <li><a href="<?php echo site_url() ?>/"><?php echo lang('Home') ?></a></li>
                     <li><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons License Attribution 4.0 </a></li>
                     <li><a href="http://learnsanskrit.org/tools/sanscript">Base On</a></li>
-                  
+
                 </ul>
             </div>
         </div>

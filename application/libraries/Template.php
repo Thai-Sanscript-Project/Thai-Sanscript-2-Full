@@ -101,9 +101,6 @@ class Template {
 
         $language = $controller->session->userdata("LANGUAGE");
 
-        print_r($controller->session);
-            print_r($_SESSION);
-
         if ($language == "th") {
             $controller->lang->load('sans', 'thai');
             $controller->session->set_userdata("LANGUAGE", "th");

@@ -10,7 +10,7 @@
 </div><br>
 <div style="clear: both"></div>
 <div id="translite" style=""><div class="container"><div class="row"><div class="col-lg-12 text-center">
-<h4 class="section-heading">เลือกชนิดตัวอักษรที่จะทำการเปรียบเทียบ</h4>
+<h4 class="section-heading"><?php echo_line('Select the character type to convert') ?></h4>
 <h4 class="section-heading">คลิกที่คำจะทำเครื่องหมายเน้นสี เพื่อทำการเปรียบเทียบ</h4>
 <hr class="primary">
 </div></div></div>

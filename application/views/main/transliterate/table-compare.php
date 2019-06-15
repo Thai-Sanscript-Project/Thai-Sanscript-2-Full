@@ -3,7 +3,8 @@
 <section id="contact-page">
     <div class="container">
 
-        <h2 class="">ตารางเปรียบเทียบอักษร จาก อักษร <span id="txt-form"></span> เป็น อักษร <span id="txt-to" style="color: #003399 "></span></h2>
+        <h2 class=""><?php echo_line("The comparative table of characters from"); ?>   <span id="txt-form"></span> 
+            <?php echo_line("To :"); ?> <span id="txt-to" style="color: #003399 "></span></h2>
         <p class="lead"></p>
         <div class="row">
             <div class="bs-glyphicons">

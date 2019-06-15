@@ -53,7 +53,7 @@
                     showAndCheck = new Array(1, 1, 0, 0);
                 }
                 var lao = "";
-                var normal_header = 'ไทย-ปรับรูป(ทั่วไป)';
+                var normal_header = '<?php echo echo_line("Thai Simple(General)"); ?>';
                 var normal_type = "thai";
                 if (getDestTypeVal() === 'lao') {
                     destination = data[2];
@@ -65,7 +65,7 @@
                         checkboxList(display, showAndCheck) +
                         langSection('1', getSrcTypeText(), source, display[0], showAndCheck[0], getSrcTypeval()) +
                         langSection('2', getDestTypeText(), destination, display[1], showAndCheck[1], getDestTypeVal()) +
-                        langSection('3', 'ไทย-คงรูป(แบบแผน)', data[0], display[2], showAndCheck[2], "thai") +
+                        langSection('3', '<?php echo echo_line("Thai Traditional(Formal)"); ?>', data[0], display[2], showAndCheck[2], "thai") +
                         langSection('4', normal_header, data[1], display[3], showAndCheck[3], normal_type) +
                         backButton();
                 $('#transliterate-compare').html(html);
@@ -141,8 +141,8 @@
     }
     function header() {
         var html = '<div class="container"><div class="row"><div class="col-lg-12 text-center">' +
-                '<h2 class="section-heading">เลือกชนิดตัวอักษรที่จะทำการเปรียบเทียบ</h2>' +
-                '<h4 class="section-heading">คลิกที่คำจะทำเครื่องหมายเน้นสี เพื่อทำการเปรียบเทียบ</h4>' +
+                '<h2 class="section-heading"><?php echo echo_line("Select the character type to convert"); ?></h2>' +
+                '<h4 class="section-heading"><?php echo echo_line("Click on the word."); ?><?php echo echo_line("It will mark the highlight color to compare"); ?></h4>' +
                 '<h5 id="time-process" class="section-heading"></h5>' +
                 '<hr class="primary">' +
                 '</div></div></div>' +
@@ -152,7 +152,7 @@
         return html;
     }
     function checkboxList(displayArr, showAndCheckArr) {
-        var normal_header = 'ไทยปรับรูป(ทั่วไป)'
+        var normal_header = '<?php echo echo_line("Thai Simple(General)"); ?>'
         if (getDestTypeVal() === 'lao') {
             normal_header = 'ลาว-แบบปรับรูป';
         }
@@ -160,7 +160,7 @@
         var html = '<div class="container"><div class="row"><div class="col-lg-8 col-lg-offset-2 text-center"><p>' +
                 checkbox(displayArr[0], showAndCheckArr[0], 1, getSrcTypeText()) +
                 checkbox(displayArr[1], showAndCheckArr[1], 2, getDestTypeText()) +
-                checkbox(displayArr[2], showAndCheckArr[2], 3, 'ไทย-คงรูป(แบบแผน)') +
+                checkbox(displayArr[2], showAndCheckArr[2], 3, '<?php echo echo_line("Thai Traditional(Formal)"); ?>') +
                 checkbox(displayArr[3], showAndCheckArr[3], 4, normal_header) +
                 '</p></div></div></div>';
         return html;
