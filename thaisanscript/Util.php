@@ -157,11 +157,12 @@ class Util {
 //                  ยaตฺกฺรเาญฺ
 //432101234 แบบคงรูป
 //FCDR
-                $samyutaKS = $charList[$i - 3] == "ก" && $charList[$i - 1] == "ษ";
+              //  $samyutaKS = $charList[$i - 3] == "ก" && $charList[$i - 1] == "ษ";
                 $condition2 = $check &&
                         $this->isThaiConsonant($charList[$i - 3]) &&
 //                        $charList[$i - 1] == "ร" &&
-                        ($samyuta || $samyutaKS) &&
+//                        ($samyuta || $samyutaKS) &&
+                        ($samyuta ) &&
                         ($charList[$i - 3] != "ร" && $charList[$i - 3] != "ล") &&
                         $charList[$i - 2] == "ฺ" &&
                         $charList[$i - 4] != "เ" &&

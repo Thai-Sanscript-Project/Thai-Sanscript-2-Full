@@ -19,6 +19,10 @@
         -webkit-font-smoothing: antialiased;
         color: #003399;
     }
+    .center {
+        text-align: center;
+        padding-bottom: 5px; 
+    }
 
 </style>
 <section id="contact-info" style="background: #f2f2f2;">
@@ -33,7 +37,8 @@
                 <?php echo echo_line("Then select other comparative characters and"); ?> 
                 <?php echo echo_line("Then select output language"); ?><br>
                 <?php echo echo_line("press the 'Convert' button"); ?> 
-                <?php echo echo_line("to view the results."); ?>
+                <?php echo echo_line("to view the results."); ?><br>
+                (<?php echo echo_line("for Lao script please install font"); ?> : <a href="<?php echo_css("Lanexang_Pali2.otf") ?>" >Lanexang Pali2</a>)
             </p>
         </div> 
         <div class="row contact-wrap"> 

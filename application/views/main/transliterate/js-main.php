@@ -26,24 +26,32 @@
         return $("#lang").val();
     }
 
+    function lojulaPali(txt) {
+        //เปลี่ยน ḷ เป็น  ḻ กรณีเป็นภาษาบาลี
+        if (getLang() === "pali") {
+            txt = txt.replace("ḷ", "ḻ");
+        }
+        return txt;
+    }
+
+
     function transliteration() {
         var output = "";
         var txt = getSrcTxtval();
         var srcType = getSrcTypeval();
         var destType = getDestTypeVal();
-        
-        
+
+        txt = lojulaPali(txt);
+
         if (srcType === 'thai') {
             /*thaisanscript.js*/
             txt = thaisanscript(txt);
             srcType = 'iast';
-        } 
-        else if (srcType === 'lao') {
-        
+        } else if (srcType === 'lao') {
+
             txt = laosanscript(txt);
             srcType = 'iast';
-        } 
-        else if (srcType === 'burmese') {
+        } else if (srcType === 'burmese') {
 
 //            txt = burmesesanscript(txt, urlEngine);
 //            alert(txt);
@@ -52,6 +60,7 @@
 
         if (srcType === 'iast') {
             txt = txt.toLowerCase();
+
         }
 
         output = Sanscript.t(txt, srcType, destType);
@@ -66,6 +75,9 @@
         var output = "";
         var txt = getSrcTxtval();
         var srcType = getSrcTypeval();
+        
+        txt = lojulaPali(txt);
+        
         if (srcType === 'thai') {
             /*thaisanscript.js*/
             output = thaisanscript(txt);
